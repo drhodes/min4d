@@ -1,7 +1,6 @@
 package min3d.core;
 
-import java.util.ArrayList;
-
+import android.util.Log;
 import min3d.Min3d;
 import min3d.interfaces.IDirtyParent;
 import min3d.interfaces.IObject3dContainer;
@@ -10,18 +9,22 @@ import min3d.vos.CameraVo;
 import min3d.vos.Color4;
 import min3d.vos.Color4Managed;
 import min3d.vos.FogType;
-import android.util.Log;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Scene implements IObject3dContainer, IDirtyParent
 {
 	private ArrayList<Object3d> _children = new ArrayList<Object3d>();
+	private ArrayList<Object3d> _hudElements = new ArrayList<Object3d>();
 
 	private ManagedLightList _lights;
 	private CameraVo _camera;
 	
 	private Color4Managed _backgroundColor;
 	private boolean _lightingEnabled;
+	private boolean _backgroundTransparent;
 	
 	private Color4 _fogColor;
 	private float _fogFar;
@@ -60,15 +63,16 @@ public class Scene implements IObject3dContainer, IDirtyParent
 	//
 	
 	/**
-	 * Resets Scene to default settings.
+	 * Resets Scene to default settings:
 	 * Removes and clears any attached Object3ds.
-	 * Resets light list.
+	 * Resets light list, adds single default light.
 	 */
 	public void reset()
 	{
 		clearChildren(this);
 
 		_children = new ArrayList<Object3d>();
+		_hudElements = new ArrayList<Object3d>();
 
 		_camera = new CameraVo();
 		
@@ -78,7 +82,22 @@ public class Scene implements IObject3dContainer, IDirtyParent
 		
 		lightingEnabled(true);
 	}
-	
+
+    public List<Object3d> hudElements()
+    {
+        return _hudElements;
+    }
+
+    public void addHudElement(Object3d $o)
+    {
+        if (_hudElements.contains($o)) return;
+
+        _hudElements.add($o);
+
+        $o.parent(this);
+        $o.scene(this);
+    }
+
 	/**
 	 * Adds Object3d to Scene. Object3d's must be added to Scene in order to be rendered
 	 * Returns always true. 
@@ -192,7 +211,6 @@ public class Scene implements IObject3dContainer, IDirtyParent
 	
 	//
 
-	/*
 	public boolean backgroundTransparent() {
 		return _backgroundTransparent;
 	}
@@ -200,7 +218,6 @@ public class Scene implements IObject3dContainer, IDirtyParent
 	public void backgroundTransparent(boolean backgroundTransparent) {
 		this._backgroundTransparent = backgroundTransparent;
 	}
-	*/
 
 	public Color4 fogColor() {
 		return _fogColor;
