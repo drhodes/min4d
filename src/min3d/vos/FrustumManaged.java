@@ -27,7 +27,12 @@ public class FrustumManaged extends AbstractDirtyManaged
 		_zFar = 100.0f;
 	}
 
-	public FrustumManaged(float $horizontalCenter, float $verticalCenter, float $shortSideLength, float $zNear, float $zFar, IDirtyParent $parent)
+	public FrustumManaged( float $horizontalCenter,
+                           float $verticalCenter,
+                           float $shortSideLength,
+                           float $zNear,
+                           float $zFar,
+                           IDirtyParent $parent )
 	{
 		super($parent);
 		
@@ -93,7 +98,8 @@ public class FrustumManaged extends AbstractDirtyManaged
 		_zFar = zFar;
 		setDirtyFlag();
 	}
-	
+  
+  
 	//
 	
 }
