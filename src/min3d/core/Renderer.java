@@ -58,6 +58,14 @@ public class Renderer implements GLSurfaceView.Renderer
     _memoryInfo = new ActivityManager.MemoryInfo();
   }
 
+  public void setupCameraAttrs() {
+    _scene.setSurfaceWidth(_surfaceWidth);
+    _scene.setSurfaceHeight(_surfaceHeight);
+    _scene.setSurfaceAspectRatio(_surfaceAspectRatio);
+
+  }
+
+  
   public void onSurfaceCreated(GL10 $gl, EGLConfig eglConfig)
   {
     Log.i(Min3d.TAG, "Renderer.onSurfaceCreated()");
@@ -88,6 +96,8 @@ public class Renderer implements GLSurfaceView.Renderer
     _gl.glLoadIdentity();
 
     updateViewFrustrum();
+
+    setupCameraAttrs();
   }
 
   public void onDrawFrame(GL10 gl)
@@ -148,10 +158,19 @@ public class Renderer implements GLSurfaceView.Renderer
     _gl.glMatrixMode(GL10.GL_MODELVIEW);
     _gl.glLoadIdentity();
 
-    GLU.gluLookAt(_gl,
-                  _scene.camera().position.x, _scene.camera().position.y, _scene.camera().position.z,
-                  _scene.camera().target.x, _scene.camera().target.y, _scene.camera().target.z,
-                  _scene.camera().upAxis.x, _scene.camera().upAxis.y, _scene.camera().upAxis.z);
+    GLU.gluLookAt( _gl,
+                   _scene.camera().position.x,
+                   _scene.camera().position.y,
+                   _scene.camera().position.z,
+
+                   _scene.camera().target.x,
+                   _scene.camera().target.y,
+                   _scene.camera().target.z,
+
+                   _scene.camera().upAxis.x,
+                   _scene.camera().upAxis.y,
+                   _scene.camera().upAxis.z
+                   );
 
     // Background color
 
@@ -180,7 +199,7 @@ public class Renderer implements GLSurfaceView.Renderer
     // dar - http://www.opengl.org/resources/features/KilgardTechniques/oglpitfall/
     // regarding the following line. Maybe there are some funky
     // normals exagerating the lighting?
-    _gl.glEnable(GL10.GL_NORMALIZE);
+    //_gl.glEnable(GL10.GL_NORMALIZE);
 
       
     for (int glIndex = 0; glIndex < NUM_GLLIGHTS; glIndex++)
@@ -664,6 +683,9 @@ public class Renderer implements GLSurfaceView.Renderer
     btm = vf.verticalCenter() - n * 1;
     top = vf.verticalCenter() + n * 1;
 
+    
+
+    
     if (_surfaceAspectRatio > 1) {
       lt *= 1f / _surfaceAspectRatio;
       rt *= 1f / _surfaceAspectRatio;
@@ -673,6 +695,12 @@ public class Renderer implements GLSurfaceView.Renderer
 
     _gl.glMatrixMode(GL10.GL_PROJECTION);
     _gl.glLoadIdentity();
+
+
+    // THIS CHNAGE RIGHT HERE> MEDITATE ON.
+    //GLU.gluPerspective ( 30f, rt/btm, vf.zNear(), vf.zFar() );
+    //_gl.glPerspective ( 30f, rt/btm, vf.zNear(), vf.zFar() );
+
     _gl.glFrustumf(lt, rt, btm, top, vf.zNear(), vf.zFar());
 
     vf.clearDirtyFlag();

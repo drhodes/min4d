@@ -16,292 +16,314 @@ import java.util.List;
 
 public class Scene implements IObject3dContainer, IDirtyParent
 {
-	private ArrayList<Object3d> _children = new ArrayList<Object3d>();
-	private ArrayList<Object3d> _hudElements = new ArrayList<Object3d>();
+  private ArrayList<Object3d> _children = new ArrayList<Object3d>();
+  private ArrayList<Object3d> _hudElements = new ArrayList<Object3d>();
 
-	private ManagedLightList _lights;
-	private CameraVo _camera;
+  private ManagedLightList _lights;
+  private CameraVo _camera;
 	
-	private Color4Managed _backgroundColor;
-	private boolean _lightingEnabled;
-	private boolean _backgroundTransparent;
+  private Color4Managed _backgroundColor;
+  private boolean _lightingEnabled;
+  private boolean _backgroundTransparent;
 	
-	private Color4 _fogColor;
-	private float _fogFar;
-	private float _fogNear;
-	private FogType _fogType;
-	private boolean _fogEnabled;
+  private Color4 _fogColor;
+  private float _fogFar;
+  private float _fogNear;
+  private FogType _fogType;
+  private boolean _fogEnabled;
 
-	private ISceneController _sceneController;
+  private ISceneController _sceneController;
+
+  private float _surfaceWidth;
+  private float _surfaceHeight;
+  private float _surfaceAspectRatio;
+  
+  public Scene(ISceneController $sceneController) 
+  {
+    _sceneController = $sceneController;
+    _lights = new ManagedLightList();
+    _fogColor = new Color4(255, 255, 255, 255);
+    _fogNear = 0;
+    _fogFar = 10;
+    _fogType = FogType.LINEAR;
+    _fogEnabled = false;
+  }
+
+  /**
+   * Allows you to use any Class implementing ISceneController
+   * to drive the Scene...
+   * @return
+   */
+  public ISceneController sceneController()
+  {
+    return _sceneController;
+  }
+  public void sceneController(ISceneController $sceneController)
+  {
+    _sceneController = $sceneController;
+  }
 	
-
-	public Scene(ISceneController $sceneController) 
-	{
-		_sceneController = $sceneController;
-		_lights = new ManagedLightList();
-		_fogColor = new Color4(255, 255, 255, 255);
-		_fogNear = 0;
-		_fogFar = 10;
-		_fogType = FogType.LINEAR;
-		_fogEnabled = false;
-	}
-
-	/**
-	 * Allows you to use any Class implementing ISceneController
-	 * to drive the Scene...
-	 * @return
-	 */
-	public ISceneController sceneController()
-	{
-		return _sceneController;
-	}
-	public void sceneController(ISceneController $sceneController)
-	{
-		_sceneController = $sceneController;
-	}
+  //
 	
-	//
-	
-	/**
-	 * Resets Scene to default settings:
-	 * Removes and clears any attached Object3ds.
-	 * Resets light list, adds single default light.
-	 */
-	public void reset()
-	{
-		clearChildren(this);
+  /**
+   * Resets Scene to default settings:
+   * Removes and clears any attached Object3ds.
+   * Resets light list, adds single default light.
+   */
+  public void reset()
+  {
+    clearChildren(this);
 
-		_children = new ArrayList<Object3d>();
-		_hudElements = new ArrayList<Object3d>();
+    _children = new ArrayList<Object3d>();
+    _hudElements = new ArrayList<Object3d>();
 
-		_camera = new CameraVo();
+    _camera = new CameraVo();
 		
-		_backgroundColor = new Color4Managed(0,0,0,255, this);
+    _backgroundColor = new Color4Managed(0,0,0,255, this);
 		
-		_lights = new ManagedLightList();
+    _lights = new ManagedLightList();
 		
-		lightingEnabled(true);
-	}
+    lightingEnabled(true);
+  }
 
-    public List<Object3d> hudElements()
-    {
-        return _hudElements;
+  public List<Object3d> hudElements()
+  {
+    return _hudElements;
+  }
+
+  public void addHudElement(Object3d $o)
+  {
+    if (_hudElements.contains($o)) return;
+
+    _hudElements.add($o);
+
+    $o.parent(this);
+    $o.scene(this);
+  }
+
+
+  // dar - The following three setters are hack to facilitate communicating
+  // back to the game information used to calculate the FOV.
+  // if a better way presents, implement with furious anger and raining sulfur.
+  
+  public void setSurfaceWidth(float $sw) {
+    _surfaceWidth = $sw;
+  }
+
+  public void setSurfaceHeight(float $sh) {
+    _surfaceHeight = $sh;
+  }
+
+  public void setSurfaceAspectRatio(float $sa) {
+    _surfaceAspectRatio = $sa;
+  }
+
+  // end of apocolypse.
+  
+  /**
+   * Adds Object3d to Scene. Object3d's must be added to Scene in order to be rendered
+   * Returns always true. 
+   */
+  public void addChild(Object3d $o)
+  {
+    if (_children.contains($o)) return;
+		
+    _children.add($o);
+		
+    $o.parent(this);
+    $o.scene(this);
+  }
+	
+  public void addChildAt(Object3d $o, int $index)
+  {
+    if (_children.contains($o)) return;
+
+    _children.add($index, $o);
+  }
+	
+  /**
+   * Removes Object3d from Scene.
+   * Returns false if unsuccessful
+   */
+  public boolean removeChild(Object3d $o)
+  {
+    $o.parent(null);
+    $o.scene(null);
+    return _children.remove($o);
+  }
+	
+  public Object3d removeChildAt(int $index)
+  {
+    Object3d o = _children.remove($index);
+		
+    if (o != null) {
+      o.parent(null);
+      o.scene(null);
     }
-
-    public void addHudElement(Object3d $o)
+    return o;
+  }
+	
+  public Object3d getChildAt(int $index)
+  {
+    return _children.get($index);
+  }
+	
+  /**
+   * TODO: Use better lookup 
+   */
+  public Object3d getChildByName(String $name)
+  {
+    for (int i = 0; i < _children.size(); i++)
     {
-        if (_hudElements.contains($o)) return;
-
-        _hudElements.add($o);
-
-        $o.parent(this);
-        $o.scene(this);
+      if (_children.get(0).name() == $name) return _children.get(0); 
     }
+    return null;
+  }
+	
+  public int getChildIndexOf(Object3d $o)
+  {
+    return _children.indexOf($o);
+  }
+	
+  public int numChildren()
+  {
+    return _children.size();
+  }
 
-	/**
-	 * Adds Object3d to Scene. Object3d's must be added to Scene in order to be rendered
-	 * Returns always true. 
-	 */
-	public void addChild(Object3d $o)
-	{
-		if (_children.contains($o)) return;
+  /**
+   * Scene's camera
+   */
+  public CameraVo camera()
+  {
+    return _camera;
+  }
+  public void camera(CameraVo $camera)
+  {
+    _camera = $camera;
+  }
+	
+  /**
+   * Scene instance's background color
+   */
+  public Color4Managed backgroundColor()
+  {
+    return _backgroundColor;
+  }
+
+  /**
+   * Lights used by the Scene 
+   */
+  public ManagedLightList lights()
+  {
+    return _lights;
+  }
+
+  /**
+   * Determines if lighting is enabled for Scene. 
+   */
+  public boolean lightingEnabled()
+  {
+    return _lightingEnabled;
+  }
+	
+  public void lightingEnabled(boolean $b)
+  {
+    _lightingEnabled = $b;
+  }
+	
+  //
+
+  public boolean backgroundTransparent() {
+    return _backgroundTransparent;
+  }
+
+  public void backgroundTransparent(boolean backgroundTransparent) {
+    this._backgroundTransparent = backgroundTransparent;
+  }
+
+  public Color4 fogColor() {
+    return _fogColor;
+  }
+
+  public void fogColor(Color4 _fogColor) {
+    this._fogColor = _fogColor;
+  }
+
+  public float fogFar() {
+    return _fogFar;
+  }
+
+  public void fogFar(float _fogFar) {
+    this._fogFar = _fogFar;
+  }
+
+  public float fogNear() {
+    return _fogNear;
+  }
+
+  public void fogNear(float _fogNear) {
+    this._fogNear = _fogNear;
+  }
+
+  public FogType fogType() {
+    return _fogType;
+  }
+
+  public void fogType(FogType _fogType) {
+    this._fogType = _fogType;
+  }
+
+  public boolean fogEnabled() {
+    return _fogEnabled;
+  }
+
+  public void fogEnabled(boolean _fogEnabled) {
+    this._fogEnabled = _fogEnabled;
+  }
+
+  /**
+   * Used by Renderer 
+   */
+  void init() /*package-private*/ 
+  {
+    Log.i(Min3d.TAG, "Scene.init()");
 		
-		_children.add($o);
+    this.reset();
 		
-		$o.parent(this);
-		$o.scene(this);
-	}
+    _sceneController.initScene();
+    _sceneController.getInitSceneHandler().post(_sceneController.getInitSceneRunnable());
+  }
 	
-	public void addChildAt(Object3d $o, int $index)
-	{
-		if (_children.contains($o)) return;
-
-		_children.add($index, $o);
-	}
+  void update()
+  {
+    _sceneController.updateScene();
+    _sceneController.getUpdateSceneHandler().post(_sceneController.getUpdateSceneRunnable());
+  }
 	
-	/**
-	 * Removes Object3d from Scene.
-	 * Returns false if unsuccessful
-	 */
-	public boolean removeChild(Object3d $o)
-	{
-		$o.parent(null);
-		$o.scene(null);
-		return _children.remove($o);
-	}
+  /**
+   * Used by Renderer 
+   */
+  ArrayList<Object3d> children() /*package-private*/ 
+  {
+    return _children;
+  }
 	
-	public Object3d removeChildAt(int $index)
-	{
-		Object3d o = _children.remove($index);
-		
-		if (o != null) {
-			o.parent(null);
-			o.scene(null);
-		}
-		return o;
-	}
-	
-	public Object3d getChildAt(int $index)
-	{
-		return _children.get($index);
-	}
-	
-	/**
-	 * TODO: Use better lookup 
-	 */
-	public Object3d getChildByName(String $name)
-	{
-		for (int i = 0; i < _children.size(); i++)
-		{
-			if (_children.get(0).name() == $name) return _children.get(0); 
-		}
-		return null;
-	}
-	
-	public int getChildIndexOf(Object3d $o)
-	{
-		return _children.indexOf($o);
-	}
-	
-	public int numChildren()
-	{
-		return _children.size();
-	}
-
-	/**
-	 * Scene's camera
-	 */
-	public CameraVo camera()
-	{
-		return _camera;
-	}
-	public void camera(CameraVo $camera)
-	{
-		_camera = $camera;
-	}
-	
-	/**
-	 * Scene instance's background color
-	 */
-	public Color4Managed backgroundColor()
-	{
-		return _backgroundColor;
-	}
-
-	/**
-	 * Lights used by the Scene 
-	 */
-	public ManagedLightList lights()
-	{
-		return _lights;
-	}
-
-	/**
-	 * Determines if lighting is enabled for Scene. 
-	 */
-	public boolean lightingEnabled()
-	{
-		return _lightingEnabled;
-	}
-	
-	public void lightingEnabled(boolean $b)
-	{
-		_lightingEnabled = $b;
-	}
-	
-	//
-
-	public boolean backgroundTransparent() {
-		return _backgroundTransparent;
-	}
-
-	public void backgroundTransparent(boolean backgroundTransparent) {
-		this._backgroundTransparent = backgroundTransparent;
-	}
-
-	public Color4 fogColor() {
-		return _fogColor;
-	}
-
-	public void fogColor(Color4 _fogColor) {
-		this._fogColor = _fogColor;
-	}
-
-	public float fogFar() {
-		return _fogFar;
-	}
-
-	public void fogFar(float _fogFar) {
-		this._fogFar = _fogFar;
-	}
-
-	public float fogNear() {
-		return _fogNear;
-	}
-
-	public void fogNear(float _fogNear) {
-		this._fogNear = _fogNear;
-	}
-
-	public FogType fogType() {
-		return _fogType;
-	}
-
-	public void fogType(FogType _fogType) {
-		this._fogType = _fogType;
-	}
-
-	public boolean fogEnabled() {
-		return _fogEnabled;
-	}
-
-	public void fogEnabled(boolean _fogEnabled) {
-		this._fogEnabled = _fogEnabled;
-	}
-
-	/**
-	 * Used by Renderer 
-	 */
-	void init() /*package-private*/ 
-	{
-		Log.i(Min3d.TAG, "Scene.init()");
-		
-		this.reset();
-		
-		_sceneController.initScene();
-		_sceneController.getInitSceneHandler().post(_sceneController.getInitSceneRunnable());
-	}
-	
-	void update()
-	{
-		_sceneController.updateScene();
-		_sceneController.getUpdateSceneHandler().post(_sceneController.getUpdateSceneRunnable());
-	}
-	
-	/**
-	 * Used by Renderer 
-	 */
-	ArrayList<Object3d> children() /*package-private*/ 
-	{
-		return _children;
-	}
-	
-	private void clearChildren(IObject3dContainer $c)
-	{
-		for (int i = $c.numChildren() - 1; i >= 0; i--)
-		{
-			Object3d o = $c.getChildAt(i);
-			o.clear();
+  private void clearChildren(IObject3dContainer $c)
+  {
+    for (int i = $c.numChildren() - 1; i >= 0; i--)
+    {
+      Object3d o = $c.getChildAt(i);
+      o.clear();
 			
-			if (o instanceof Object3dContainer)
-			{
-				clearChildren((Object3dContainer)o);
-			}
-		}
-	}	
+      if (o instanceof Object3dContainer)
+      {
+        clearChildren((Object3dContainer)o);
+      }
+    }
+  }	
 	
-	public void onDirty()
-	{
-		//
-	}
+  public void onDirty()
+  {
+    //
+  }
 }

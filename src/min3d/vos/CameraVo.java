@@ -15,7 +15,7 @@ public class CameraVo
   {
   }
 
-  public CameraRays getFrustumVector1() {
-    return new CameraRays(this);
-  }    
+  public double fovy(){
+    return frustum.fov();
+  }
 }
