@@ -505,17 +505,29 @@ public class Renderer implements GLSurfaceView.Renderer
 
     drawObject_textures($o);
 
-
     // Matrix operations in modelview
 
     _gl.glPushMatrix();
 
     _gl.glTranslatef($o.position().x, $o.position().y, $o.position().z);
 
+
+    // -----------------------------------------------------------------------------
+    // rotate around arbitary axis 
+    _gl.glRotatef( $o.axis1angle(),
+                   $o.axis1().x,
+                   $o.axis1().y,
+                   $o.axis1().z
+                   );
+
+    //_gl.glPopMatrix();    
+    //_gl.glPushMatrix();
+    
     _gl.glRotatef($o.rotation().x, 1, 0, 0);
     _gl.glRotatef($o.rotation().y, 0, 1, 0);
     _gl.glRotatef($o.rotation().z, 0, 0, 1);
-
+                  
+    
     _gl.glScalef($o.scale().x, $o.scale().y, $o.scale().z);
 
     // Draw
