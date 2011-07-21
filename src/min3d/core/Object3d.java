@@ -1,6 +1,7 @@
 package min3d.core;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 import javax.microedition.khronos.opengles.GL10;
 
@@ -11,6 +12,7 @@ import min3d.vos.Color4;
 import min3d.vos.Number3d;
 import min3d.vos.RenderType;
 import min3d.vos.ShadeModel;
+import min3d.vos.Face;
 
 /**
  * @author Lee
@@ -58,7 +60,23 @@ public class Object3d
   private Scene _scene;
   private IObject3dContainer _parent;
 
+  /**------------------------------------------------------------------
+   * get the faces as an list of triples
+   */
+  public LinkedList<Triple> getTripleFaces(){
+    final LinkedList<Triple> faces = new LinkedList<Triple>();
 
+    int count = _faces.size()/2; // WHY DOES THIS WORK?!?!?!?!?!?!?!?!?!?!
+
+    for (int i=0; i<count; i++) {
+      Face f = _faces.get(i);
+      faces.push( new Triple(_vertices.getPoint(f.a),
+                             _vertices.getPoint(f.b),
+                             _vertices.getPoint(f.c)));
+    }
+    return faces;
+  }
+  
   /**-----------------------------------------------------------------------------
    * Add an arbitary axis to rotate the object about
    * this doesn't accumulate rotation state.
@@ -68,6 +86,7 @@ public class Object3d
     _axis1 = p;
   }
 
+  
   public float axis1angle() {
     return _axis1angle;
   }
@@ -126,7 +145,7 @@ public class Object3d
   {
     return _textures;
   }
-	
+  
   /**
    * Determines if object will be rendered.
    * Default is true. 
