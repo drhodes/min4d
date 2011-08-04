@@ -66,10 +66,7 @@ public class Object3d
   public LinkedList<Triple> getTripleFaces(){
     final LinkedList<Triple> faces = new LinkedList<Triple>();
 
-    int count = _faces.size()/2; // WHY DOES THIS WORK?!?!?!?!?!?!?!?!?!?!
-    // no idea why divide by 2.
-    // it stands to reason that since _faces is a list vertices
-    // 3 to a face, it should be /3 not /2.  
+    int count = _faces.size(); 
     
     for (int i=0; i<count; i++) {
       Face f = _faces.get(i);
