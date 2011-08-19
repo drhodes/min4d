@@ -479,6 +479,7 @@ public class Renderer implements GLSurfaceView.Renderer
          $o.renderType() == RenderType.LINE_STRIP ||
          $o.renderType() == RenderType.LINE_LOOP )
     {
+      
       if ($o.lineSmoothing() == true)
       {
         _gl.glEnable(GL10.GL_LINE_SMOOTH);

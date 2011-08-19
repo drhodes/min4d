@@ -40,7 +40,7 @@ public class Object3d
   
   private Number3d _scale = new Number3d(1,1,1);
 
-  private Color4 _defaultColor = new Color4();
+  private Color4 _defaultColor = new Color4(255,0,0,255);
 	
   private ShadeModel _shadeModel = ShadeModel.SMOOTH;
   private float _pointSize = 3f;
@@ -276,7 +276,16 @@ public class Object3d
   {
     _renderType = $type;
   }
-	
+
+  public void setRenderTypeLines(){
+    _renderType = RenderType.LINES;
+    _lineSmoothing = true;
+  }
+
+  public void setLineWidth(float w){
+    _lineWidth = w;
+  }  
+  
   /**
    * Possible values are ShadeModel.SMOOTH and ShadeModel.FLAT.
    * Default is ShadeModel.SMOOTH.
