@@ -63,8 +63,6 @@ public class Object3dContainer extends Object3d implements IObject3dContainer
     return b;
   }
   
-  
-  
   public Object3d removeChildAt(int $index) 
   {
     Object3d o = _children.remove($index);

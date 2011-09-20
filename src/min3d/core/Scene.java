@@ -13,7 +13,6 @@ import min3d.vos.FogType;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Scene implements IObject3dContainer, IDirtyParent
 {
   private ArrayList<Object3d> _children = new ArrayList<Object3d>();
@@ -101,7 +100,16 @@ public class Scene implements IObject3dContainer, IDirtyParent
     $o.scene(this);
   }
 
+  /*
+  public boolean removeHudElement(Object3d $o)
+  {
+    $o.parent(null);
+    $o.scene(null);
+    return _hudElements.remove($o);    
+  }
+  */
 
+  
   // dar - The following three setters are hack to facilitate communicating
   // back to the game information used to calculate the FOV.
   // if a better way presents, implement with furious anger and raining sulfur.
