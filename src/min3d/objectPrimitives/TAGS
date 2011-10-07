@@ -1,0 +1,169 @@
+
+HollowCylinder.java,1163
+public class HollowCylinderHollowCylinder18,502
+	private double DEG =DEG20,561
+	public HollowCylinder(HollowCylinder28,713
+	private void addHorizontalSurface(addHorizontalSurface43,1108
+		int indexOffset =indexOffset45,1184
+		float step =step46,1223
+		Color4 col =col50,1289
+		for (int i =i52,1373
+			float angle =angle54,1413
+			float x1 		=x157,1464
+			float y1 		=y158,1521
+			float z1 		=z159,1578
+			Uv uv1 			=uv160,1606
+			Number3d n1 	=n161,1637
+			float x2 		=x265,1782
+			float y2 		=y266,1839
+			float z2 		=z267,1896
+			Uv uv2			=uv268,1924
+			Number3d n2	=n269,1954
+		for (int i =i75,2110
+			int a =a77,2151
+			int b =b78,2192
+			int c =c79,2233
+			int d =d80,2274
+		int a =a84,2359
+		int b =b85,2431
+		int c =c86,2475
+		int d =d87,2505
+	private void addVerticalSurface(addVerticalSurface92,2581
+		int off =off94,2637
+		for (int i =i96,2684
+			int ul =ul98,2728
+			int bl =bl99,2746
+			int ur =ur100,2769
+			int br =br101,2791
+		int ul =ul112,2935
+		int bl =bl113,2960
+		int ur =ur114,2982
+		int br =br115,2999
+	private void addQuad(addQuad127,3132
+		Face t;t129,3209
+
+Line.java,241
+public class LineLine9,172
+  public Line(Line16,318
+  public Line(Line23,439
+  public void redoVerts(redoVerts49,1171
+  public void setSrc(setSrc60,1609
+  public void setColor(setColor65,1684
+  public void setTgt(setTgt69,1741
+
+Torus.java,1315
+public class TorusTorus22,689
+	private final int MIN_SEGMENTSW =MIN_SEGMENTSW23,737
+	private final int MIN_SEGMENTSH =MIN_SEGMENTSH24,776
+	private float largeRadius;largeRadius26,818
+	private float smallRadius;smallRadius27,847
+	private int segmentsW;segmentsW28,876
+	private int segmentsH;segmentsH29,901
+	public Torus(Torus31,929
+	public Torus(Torus35,991
+	public Torus(Torus39,1058
+	public Torus(Torus43,1221
+	private void build(build53,1618
+		float r1 =r155,1645
+		float r2 =r256,1672
+		int steps1 =steps157,1699
+		int steps2 =steps258,1726
+		float step1r =step1r59,1753
+		float step2r =step2r60,1807
+		float a1a =a1a61,1861
+		float a1b =a1b62,1879
+		int vcount =vcount63,1902
+		for(float s=s65,1925
+			float a2a =a2a66,1982
+			float a2b =a2b67,2001
+			for(float s2=s269,2030
+				Vertex3d v0 =v070,2091
+				Vertex3d v1 =v171,2139
+				Vertex3d v2 =v272,2187
+				Vertex3d v3 =v373,2235
+				float ux1 =ux175,2289
+				float ux0 =ux076,2316
+				float uy0 =uy077,2347
+				float uy1 =uy178,2375
+	private Vertex3d getVertex(getVertex93,2897
+		Vertex3d vertex =vertex94,2968
+		float ca1 =ca197,3044
+		float sa1 =sa198,3080
+		float ca2 =ca299,3116
+		float sa2 =sa2100,3152
+		float centerX =centerX102,3192
+		float centerZ =centerZ103,3221
+
+Box.java,462
+public class BoxBox15,409
+	public Box(Box23,560
+	public Box(Box49,1210
+	public Box(Box54,1360
+	public Box(Box59,1547
+	private void make(make64,1668
+		float w =w66,1694
+		float h =h67,1720
+		float d =d68,1747
+		Utils.addQuad(Utils.addQuad77,2232
+		Utils.addQuad(Utils.addQuad84,2701
+		Utils.addQuad(Utils.addQuad91,3171
+		Utils.addQuad(Utils.addQuad98,3642
+		Utils.addQuad(Utils.addQuad105,4109
+		Utils.addQuad(Utils.addQuad112,4581
+
+SkyBox.java,672
+public class SkyBoxSkyBox9,177
+	private float size;size10,226
+	private float halfSize;halfSize11,248
+	private int quality;quality12,274
+	private Color4 color;color13,297
+	private Rectangle[] faces;faces14,321
+	public SkyBox(SkyBox26,442
+	private void build(build34,598
+		Rectangle north =north37,677
+		Rectangle east =east38,750
+		Rectangle south =south39,822
+		Rectangle west =west40,895
+		Rectangle up =up41,967
+		Rectangle down =down42,1037
+	public void addTexture(addTexture86,2154
+		Bitmap bitmap =bitmap87,2219
+		Shared.textureManager(Shared.textureManager88,2282
+	public void addTexture(addTexture93,2402
+			for(int i=i96,2495
+
+Rectangle.java,384
+public class RectangleRectangle7,122
+	public Rectangle(Rectangle9,175
+	public Rectangle(Rectangle14,328
+		float w =w20,491
+		float h =h21,521
+		float width5 =width523,554
+		float height5 =height524,583
+		int colspan =colspan43,982
+				int lr =lr49,1105
+				int ll =ll50,1140
+				int ur =ur51,1162
+				int ul =ul52,1190
+				Utils.addQuad(Utils.addQuad53,1212
+
+Sphere.java,575
+public class SphereSphere13,262
+	public Sphere(Sphere20,385
+	public Sphere(Sphere37,715
+	public Sphere(Sphere54,974
+	private void build(build71,1262
+		Number3d n =n75,1306
+		Number3d pos =pos76,1338
+		Number3d posFull =posFull77,1372
+			float v =v84,1536
+			float theta1 =theta185,1584
+				float u =u94,1787
+				float theta2 =theta295,1836
+		int colLength =colLength110,2216
+			int offset =offset114,2286
+				int ul =ul118,2362
+				int ur =ur119,2390
+				int br =br120,2420
+				int bl =bl121,2471
+				Utils.addQuad(Utils.addQuad123,2528

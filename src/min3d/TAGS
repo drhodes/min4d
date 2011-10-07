@@ -1,0 +1,1407 @@
+
+core/TextureManager.java,1019
+public class TextureManagerTextureManager22,663
+	public TextureManager(TextureManager30,882
+	public void reset(reset35,930
+			Object[] a =a42,1077
+			for (int i =i43,1108
+				int glId =glId44,1149
+				Shared.renderer(Shared.renderer45,1195
+	public String addTextureId(addTextureId60,1643
+		int glId =glId64,1832
+		String s =s66,1913
+	public String addTextureId(addTextureId82,2282
+	public String createTextureId(createTextureId91,2533
+	public void deleteTexture(deleteTexture100,2792
+		int glId =glId102,2843
+		Shared.renderer(Shared.renderer103,2891
+	public String[] getTextureIds(getTextureIds115,3151
+		String[] a =a118,3237
+	int getGlTextureId(getGlTextureId127,3356
+	boolean hasMipMap(hasMipMap135,3505
+	public boolean contains(contains141,3619
+	private String arrayToString(arrayToString147,3730
+		String s =s149,3778
+		for (int i =i150,3796
+	private void logContents(logContents157,3900
+		Log.v(Log.v159,3933
+	public String getNewAtlasId(getNewAtlasId162,4037
+
+core/ManagedLightList.java,830
+public class ManagedLightListManagedLightList11,157
+	public ManagedLightList(ManagedLightList32,808
+	public void reset(reset37,859
+		Log.i(Log.i39,886
+		for (int i =i42,984
+		for (int i =i50,1245
+	public boolean add(add58,1416
+		boolean result =result67,1623
+		int glIndex =glIndex69,1666
+	public void remove(remove79,1860
+		boolean result =result81,1900
+		int glIndex =glIndex85,1972
+	public void removeAll(removeAll93,2141
+	public int size(size98,2190
+	public Light get(get103,2247
+	public Light[] toArray(toArray108,2320
+	int getGlIndexByLight(getGlIndexByLight115,2453
+	Light getLightByGlIndex(getLightByGlIndex123,2596
+		for (int i =i125,2662
+			Light light =light127,2712
+	boolean[] glIndexEnabledDirty(glIndexEnabledDirty137,2874
+	boolean[] glIndexEnabled(glIndexEnabled145,3006
+
+core/RendererActivity.java,1224
+public class RendererActivityRendererActivity20,581
+  public Scene scene;scene22,660
+  public int getWidth(getWidth30,854
+  public int getHeight(getHeight34,927
+      public void run(run41,1065
+      public void run(run48,1203
+  protected void onCreate(onCreate57,1302
+    Shared.context(Shared.context67,1542
+    Renderer r =r69,1599
+    Shared.renderer(Shared.renderer70,1638
+  protected void glSurfaceViewConfig(glSurfaceViewConfig85,2109
+  protected GLSurfaceView glSurfaceView(glSurfaceView95,2562
+  protected void onCreateSetContentView(onCreateSetContentView103,2705
+  protected void onResume(onResume109,2811
+  protected void onPause(onPause116,2922
+  public void initScene(initScene130,3431
+  public void updateScene(updateScene138,3626
+  public void onInitScene(onInitScene146,3795
+  public void onUpdateScene(onUpdateScene154,3947
+  public void renderContinuously(renderContinuously162,4154
+  public Handler getInitSceneHandler(getInitSceneHandler172,4444
+  public Handler getUpdateSceneHandler(getUpdateSceneHandler177,4527
+  public Runnable getInitSceneRunnable(getInitSceneRunnable182,4613
+  public Runnable getUpdateSceneRunnable(getUpdateSceneRunnable187,4700
+
+core/Color4BufferList.java,1173
+public class Color4BufferListColor4BufferList9,112
+	public static final int PROPERTIES_PER_ELEMENT =PROPERTIES_PER_ELEMENT11,146
+	public static final int BYTES_PER_PROPERTY =BYTES_PER_PROPERTY12,200
+	public Color4BufferList(Color4BufferList17,308
+	public Color4BufferList(Color4BufferList24,473
+		int numBytes =numBytes26,521
+	public int size(size34,741
+	public int capacity(capacity43,949
+	public void clear(clear51,1102
+	public Color4 getAsColor4(getAsColor456,1149
+	public void putInColor4(putInColor462,1313
+	public short getPropertyR(getPropertyR71,1554
+	public short getPropertyG(getPropertyG76,1678
+	public float getPropertyB(getPropertyB81,1806
+	public float getPropertyA(getPropertyA86,1934
+	public void add(add94,2073
+	public void add(add100,2160
+	public void set(set106,2286
+	public void set(set117,2555
+	public void setPropertyR(setPropertyR126,2769
+	public void setPropertyG(setPropertyG131,2896
+	public void setPropertyB(setPropertyB136,3027
+	public void setPropertyA(setPropertyA141,3158
+	public ByteBuffer buffer(buffer149,3300
+	public Color4BufferList clone(clone154,3354
+		Color4BufferList c =c157,3411
+
+core/Object3d.java,3281
+public class Object3dObject3d20,375
+    int count =count69,1882
+    for (int i=i71,1921
+      Face f =f72,1956
+  public void axis1(axis184,2380
+  public float axis1angle(axis1angle90,2481
+  public Number3d axis1(axis194,2544
+  public Object3d(Object3d101,2695
+  public Object3d(Object3d111,2947
+  public Object3d(Object3d121,3316
+  public Vertices vertices(vertices131,3628
+  public FacesBufferedList faces(faces139,3756
+  public TextureList textures(textures144,3825
+  public boolean isVisible(isVisible153,3978
+  public void isVisible(isVisible157,4042
+  public boolean doubleSidedEnabled(doubleSidedEnabled166,4225
+  public void doubleSidedEnabled(doubleSidedEnabled170,4307
+  public boolean colorMaterialEnabled(colorMaterialEnabled179,4493
+  public boolean lightingEnabled(lightingEnabled184,4582
+  public void lightingEnabled(lightingEnabled188,4657
+  public void colorMaterialEnabled(colorMaterialEnabled192,4742
+  public boolean animationEnabled(animationEnabled203,5108
+  public void animationEnabled(animationEnabled207,5186
+  public boolean vertexColorsEnabled(vertexColorsEnabled217,5519
+  public void vertexColorsEnabled(vertexColorsEnabled221,5603
+  public boolean texturesEnabled(texturesEnabled230,5803
+  public void texturesEnabled(texturesEnabled234,5879
+  public boolean normalsEnabled(normalsEnabled244,6133
+  public void normalsEnabled(normalsEnabled248,6207
+  public boolean ignoreFaces(ignoreFaces258,6466
+  public void ignoreFaces(ignoreFaces262,6534
+  public RenderType renderType(renderType271,6701
+  public void renderType(renderType275,6770
+  public void setRenderTypeLines(setRenderTypeLines280,6852
+  public void setLineWidth(setLineWidth285,6961
+  public ShadeModel shadeModel(shadeModel294,7160
+  public void shadeModel(shadeModel298,7229
+  public Number3dBufferList points(points306,7377
+  public UvBufferList uvs(uvs314,7513
+  public Number3dBufferList normals(normals322,7637
+  public Color4BufferList colors(colors330,7775
+  public boolean hasUvs(hasUvs338,7909
+  public boolean hasNormals(hasNormals346,8033
+  public boolean hasVertexColors(hasVertexColors354,8166
+  public void clear(clear363,8308
+  public Color4 defaultColor(defaultColor379,8872
+  public void defaultColor(defaultColor384,8944
+  public Number3d position(position391,9070
+  public Number3d rotation(rotation400,9266
+  public Number3d scale(scale408,9374
+  public float pointSize(pointSize417,9524
+  public void pointSize(pointSize421,9587
+  public boolean pointSmoothing(pointSmoothing431,9832
+  public void pointSmoothing(pointSmoothing435,9906
+  public float lineWidth(lineWidth448,10341
+  public void lineWidth(lineWidth452,10403
+  public boolean lineSmoothing(lineSmoothing461,10584
+  public void lineSmoothing(lineSmoothing465,10656
+  public String name(name473,10778
+  public void name(name477,10831
+  public IObject3dContainer parent(parent482,10892
+  void parent(parent489,10973
+  void scene(scene497,11115
+  Scene scene(scene504,11248
+  public Boolean customRenderer(customRenderer515,11528
+  public Object3d clone(clone520,11602
+    Vertices v =v522,11634
+    FacesBufferedList f =f523,11671
+    Object3d clone =clone525,11719
+
+core/RenderCaps.java,963
+public class RenderCapsRenderCaps17,392
+	public static float openGlVersion(openGlVersion34,950
+	public static boolean isGl10Only(isGl10Only39,1025
+	public static int maxTextureUnits(maxTextureUnits44,1095
+	public static int aliasedPointSizeMin(aliasedPointSizeMin49,1172
+	public static int aliasedPointSizeMax(aliasedPointSizeMax54,1257
+	public static int smoothPointSizeMin(smoothPointSizeMin59,1342
+	public static int smoothPointSizeMax(smoothPointSizeMax64,1425
+	public static int aliasedLineSizeMin(aliasedLineSizeMin69,1508
+	public static int aliasedLineSizeMax(aliasedLineSizeMax74,1591
+	public static int smoothLineSizeMin(smoothLineSizeMin79,1674
+	public static int smoothLineSizeMax(smoothLineSizeMax84,1755
+	public static int maxLights(maxLights89,1836
+	static void setRenderCaps(setRenderCaps97,1956
+	    IntBuffer i;i99,2019
+		Log.v(Log.v148,3351
+		Log.v(Log.v149,3421
+		Log.v(Log.v150,3495
+		Log.v(Log.v151,3567
+
+core/FacesBufferedList.java,1502
+public class FacesBufferedListFacesBufferedList9,138
+	public static final int PROPERTIES_PER_ELEMENT =PROPERTIES_PER_ELEMENT11,173
+	public static final int BYTES_PER_PROPERTY =BYTES_PER_PROPERTY12,227
+	public FacesBufferedList(FacesBufferedList21,468
+		ByteBuffer bb =bb23,526
+	public FacesBufferedList(FacesBufferedList30,719
+		ByteBuffer b =b32,768
+	public int size(size40,996
+	public int capacity(capacity50,1207
+	public void clear(clear58,1360
+	public Face get(get63,1407
+	public void putInFace(putInFace69,1549
+	public short getPropertyA(getPropertyA77,1747
+	public short getPropertyB(getPropertyB82,1871
+	public float getPropertyC(getPropertyC87,1999
+	public void renderSubsetStartIndex(renderSubsetStartIndex97,2314
+	public int renderSubsetStartIndex(renderSubsetStartIndex101,2404
+	public void renderSubsetLength(renderSubsetLength105,2485
+	public int renderSubsetLength(renderSubsetLength109,2567
+	public boolean renderSubsetEnabled(renderSubsetEnabled118,2771
+	public void renderSubsetEnabled(renderSubsetEnabled122,2850
+	public void add(add129,2945
+	public void add(add135,3030
+	public void add(add139,3122
+	public void set(set145,3234
+	public void set(set153,3395
+	public void setPropertyA(setPropertyA161,3560
+	public void setPropertyB(setPropertyB166,3681
+	public void setPropertyC(setPropertyC171,3806
+	public ShortBuffer buffer(buffer179,3942
+	public FacesBufferedList clone(clone184,3997
+		FacesBufferedList c =c187,4055
+
+core/Vertices.java,833
+public class VerticesVertices8,103
+  public Vertices(Vertices27,775
+  public Vertices(Vertices45,1386
+  public Vertices(Vertices58,1836
+  public int size(size71,2250
+  public int capacity(capacity76,2312
+  public boolean hasUvs(hasUvs81,2382
+  public Number3d getPoint(getPoint86,2442
+  public boolean hasNormals(hasNormals90,2533
+  public boolean hasColors(hasColors95,2602
+  public short addVertex(addVertex108,2909
+  public short addVertex(addVertex132,3834
+  public void overwriteVerts(overwriteVerts143,4138
+  public void overwriteNormals(overwriteNormals148,4235
+  Number3dBufferList points(points153,4339
+  UvBufferList uvs(uvs161,4472
+  Number3dBufferList normals(normals169,4588
+  Color4BufferList colors(colors177,4716
+  public Vertices clone(clone182,4799
+    Vertices v =v184,4831
+
+core/TextureList.java,890
+public class TextureListTextureList17,419
+	public TextureList(TextureList22,491
+	public boolean add(add30,601
+	public void add(add39,820
+	public TextureVo addById(addById47,1015
+		TextureVo t =t53,1263
+	public boolean addReplace(addReplace61,1432
+	public boolean remove(remove70,1579
+	public boolean removeById(removeById78,1735
+		TextureVo t =t80,1786
+	public void removeAll(removeAll87,1963
+		for (int i =i89,1993
+	public TextureVo get(get96,2135
+	public TextureVo getById(getById104,2278
+		for (int i =i106,2328
+			String s =s107,2369
+				TextureVo t =t109,2432
+	public int size(size116,2511
+	public void clear(clear121,2563
+	public TextureVo[] toArray(toArray129,2677
+		Object[] a =a131,2712
+		TextureVo[] ret =ret132,2742
+		for (int i =i133,2788
+	public String[] getIds(getIds143,2986
+		String[] a =a148,3095
+		for (int i =i149,3134
+
+core/Renderer.java,2699
+public class RendererRenderer22,571
+  public static final int NUM_GLLIGHTS =NUM_GLLIGHTS24,631
+  public static final int FRAMERATE_SAMPLEINTERVAL_MS =FRAMERATE_SAMPLEINTERVAL_MS39,1010
+  public Renderer(Renderer47,1300
+    Shared.textureManager(Shared.textureManager55,1509
+  public void setupCameraAttrs(setupCameraAttrs61,1719
+  public void onSurfaceCreated(onSurfaceCreated69,1914
+    Log.i(Log.i71,1982
+    RenderCaps.setRenderCaps(RenderCaps.setRenderCaps73,2038
+  public void onSurfaceChanged(onSurfaceChanged82,2138
+    Log.i(Log.i84,2198
+  public void onDrawFrame(onDrawFrame103,2567
+  public GL10 gl(gl125,2917
+  public float fps(fps133,3046
+  public long availMem(availMem141,3158
+  protected void drawSetup(drawSetup147,3280
+    GLU.gluLookAt(GLU.gluLookAt161,3516
+  protected void drawSetupLights(drawSetupLights195,4597
+    for (int glIndex =glIndex205,4944
+    Light[] lights =lights227,5578
+    for (int i =i228,5627
+      Light light =light230,5679
+        int glLightId =glLightId236,5834
+  protected void drawScene(drawScene300,8158
+    for (int i =i315,8588
+      Object3d o =o317,8651
+  public void drawHud(drawHud326,8827
+  public void switchToOrtho(switchToOrtho343,9145
+    GL10 gl =gl345,9181
+  public void switchBackToFrustum(switchBackToFrustum355,9488
+    GL10 gl =gl357,9530
+  //boolean customResult =customResult365,9722
+  protected void drawObject(drawObject369,9808
+    boolean useLighting =useLighting407,10729
+      Object3dContainer container =container577,14945
+      for (int i =i579,15008
+        Object3d o =o581,15078
+  private void drawObject_textures(drawObject_textures591,15227
+    for (int i =i595,15322
+        TextureVo textureVo =textureVo605,15690
+          int glId =glId610,15869
+          int minFilterType =minFilterType615,16112
+          for (int j =j620,16500
+  int uploadTextureAndReturnId(uploadTextureAndReturnId657,17858
+    int glTextureId;glTextureId659,17956
+    int[] a =a661,17980
+    GLUtils.texImage2D(GLUtils.texImage2D676,18469
+  void deleteTexture(deleteTexture685,18608
+    int[] a =a686,18670
+  protected void updateViewFrustrum(updateViewFrustrum692,18840
+    FrustumManaged vf =vf693,18881
+    float n =n694,18931
+  public void logFps(logFps730,19891
+  private void setGl(setGl741,20075
+  private void doFps(doFps746,20135
+    long now =now750,20186
+    long delta =delta751,20230
+      Log.v(Log.v757,20424
+  private void reset(reset764,20616
+    Shared.textureManager(Shared.textureManager767,20674
+    for (int i =i795,21747
+//Color4 c =c806,21967
+///Color4 c =c808,22091
+//Color4 c =c810,22215
+
+core/Triple.java,104
+public class TripleTriple4,48
+  public Triple(Triple9,160
+  public String toString(toString15,266
+
+core/Scene.java,2080
+public class SceneScene16,368
+  public Scene(Scene40,1075
+  public ISceneController sceneController(sceneController56,1485
+  public void sceneController(sceneController60,1570
+  public void reset(reset72,1855
+  public void addHudElement(addHudElement93,2258
+  public boolean removeHudElement(removeHudElement104,2436
+  public void setSurfaceWidth(setSurfaceWidth117,2814
+  public void setSurfaceHeight(setSurfaceHeight121,2891
+  public void setSurfaceAspectRatio(setSurfaceAspectRatio125,2970
+  public void addChild(addChild135,3218
+  public void addChildAt(addChildAt145,3384
+  public boolean removeChild(removeChild156,3608
+  public Object3d removeChildAt(removeChildAt163,3741
+    Object3d o =o165,3791
+  public Object3d getChildAt(getChildAt174,3936
+  public Object3d getChildByName(getChildByName182,4071
+    for (int i =i184,4124
+  public int getChildIndexOf(getChildIndexOf191,4283
+  public int numChildren(numChildren196,4374
+  public CameraVo camera(camera204,4479
+  public void camera(camera208,4538
+  public Color4Managed backgroundColor(backgroundColor216,4669
+  public ManagedLightList lights(lights224,4799
+  public boolean lightingEnabled(lightingEnabled232,4934
+  public void lightingEnabled(lightingEnabled237,5013
+  public boolean backgroundTransparent(backgroundTransparent244,5105
+  public void backgroundTransparent(backgroundTransparent248,5192
+  public Color4 fogColor(fogColor252,5327
+  public void fogColor(fogColor256,5387
+  public float fogFar(fogFar260,5471
+  public void fogFar(fogFar264,5526
+  public float fogNear(fogNear268,5601
+  public void fogNear(fogNear272,5658
+  public FogType fogType(fogType276,5737
+  public void fogType(fogType280,5796
+  public boolean fogEnabled(fogEnabled284,5877
+  public void fogEnabled(fogEnabled288,5942
+  void init(init295,6073
+    Log.i(Log.i297,6114
+  void update(update305,6314
+  private void clearChildren(clearChildren319,6605
+    for (int i =i321,6663
+      Object3d o =o323,6723
+  public void onDirty(onDirty333,6907
+
+core/Number3dBufferList.java,1231
+public class Number3dBufferListNumber3dBufferList9,142
+  public static final int PROPERTIES_PER_ELEMENT =PROPERTIES_PER_ELEMENT11,178
+  public static final int BYTES_PER_PROPERTY =BYTES_PER_PROPERTY12,233
+  public Number3dBufferList(Number3dBufferList17,349
+    ByteBuffer bb =bb19,410
+  public Number3dBufferList(Number3dBufferList26,614
+    int numBytes =numBytes28,666
+    ByteBuffer bb =bb29,746
+  public int size(size38,942
+  public int capacity(capacity47,1159
+  public void clear(clear55,1320
+  public Number3d getAsNumber3d(getAsNumber3d61,1380
+  public void putInNumber3d(putInNumber3d67,1548
+  public float getPropertyX(getPropertyX75,1760
+  public float getPropertyY(getPropertyY80,1884
+  public float getPropertyZ(getPropertyZ85,2012
+  public void add(add93,2152
+  public void add(add99,2248
+  public void set(set105,2367
+  public void set(set113,2531
+  public void setPropertyX(setPropertyX121,2707
+  public void setPropertyY(setPropertyY126,2835
+  public void setPropertyZ(setPropertyZ131,2967
+  public FloatBuffer buffer(buffer139,3111
+  public void overwrite(overwrite144,3171
+  public Number3dBufferList clone(clone150,3271
+    Number3dBufferList c =c153,3334
+
+core/UvBufferList.java,982
+public class UvBufferListUvBufferList10,138
+	public static final int PROPERTIES_PER_ELEMENT =PROPERTIES_PER_ELEMENT12,169
+	public static final int BYTES_PER_PROPERTY =BYTES_PER_PROPERTY13,223
+	public UvBufferList(UvBufferList18,336
+		ByteBuffer bb =bb20,389
+	public UvBufferList(UvBufferList27,582
+		int numBytes =numBytes29,626
+		ByteBuffer bb =bb30,704
+	public int size(size39,890
+	public int capacity(capacity48,1098
+	public void clear(clear56,1251
+	public Uv getAsUv(getAsUv61,1299
+	public void putInUv(putInUv67,1431
+	public float getPropertyU(getPropertyU74,1574
+	public float getPropertyV(getPropertyV79,1691
+	public void add(add87,1823
+	public void add(add93,1908
+	public void set(set99,2006
+	public void set(set106,2139
+	public void setPropertyU(setPropertyU113,2279
+	public void setPropertyV(setPropertyV118,2400
+	public FloatBuffer buffer(buffer126,2536
+	public UvBufferList clone(clone131,2591
+		UvBufferList c =c134,2644
+
+core/Object3dContainer.java,930
+public class Object3dContainerObject3dContainer7,101
+  public Object3dContainer(Object3dContainer11,257
+  public Object3dContainer(Object3dContainer21,525
+  public Object3dContainer(Object3dContainer26,645
+  public Object3dContainer(Object3dContainer34,926
+  public void addChild(addChild39,1078
+  public void addChildAt(addChildAt47,1207
+  public boolean removeChild(removeChild55,1358
+    boolean b =b57,1406
+  public Object3d removeChildAt(removeChildAt66,1541
+    Object3d o =o68,1592
+  public Object3d getChildAt(getChildAt76,1733
+  public Object3d getChildByName(getChildByName84,1868
+    for (int i =i86,1921
+  public int getChildIndexOf(getChildIndexOf93,2084
+  public int numChildren(numChildren99,2179
+  public Object3dContainer clone(clone110,2345
+    Vertices v =v112,2386
+    FacesBufferedList f =f113,2423
+    Object3dContainer clone =clone115,2468
+    for(int i =i129,2897
+
+objectPrimitives/HollowCylinder.java,1163
+public class HollowCylinderHollowCylinder18,502
+	private double DEG =DEG20,561
+	public HollowCylinder(HollowCylinder28,713
+	private void addHorizontalSurface(addHorizontalSurface43,1108
+		int indexOffset =indexOffset45,1184
+		float step =step46,1223
+		Color4 col =col50,1289
+		for (int i =i52,1373
+			float angle =angle54,1413
+			float x1 		=x157,1464
+			float y1 		=y158,1521
+			float z1 		=z159,1578
+			Uv uv1 			=uv160,1606
+			Number3d n1 	=n161,1637
+			float x2 		=x265,1782
+			float y2 		=y266,1839
+			float z2 		=z267,1896
+			Uv uv2			=uv268,1924
+			Number3d n2	=n269,1954
+		for (int i =i75,2110
+			int a =a77,2151
+			int b =b78,2192
+			int c =c79,2233
+			int d =d80,2274
+		int a =a84,2359
+		int b =b85,2431
+		int c =c86,2475
+		int d =d87,2505
+	private void addVerticalSurface(addVerticalSurface92,2581
+		int off =off94,2637
+		for (int i =i96,2684
+			int ul =ul98,2728
+			int bl =bl99,2746
+			int ur =ur100,2769
+			int br =br101,2791
+		int ul =ul112,2935
+		int bl =bl113,2960
+		int ur =ur114,2982
+		int br =br115,2999
+	private void addQuad(addQuad127,3132
+		Face t;t129,3209
+
+objectPrimitives/Line.java,241
+public class LineLine9,172
+  public Line(Line16,318
+  public Line(Line23,439
+  public void redoVerts(redoVerts49,1171
+  public void setSrc(setSrc60,1609
+  public void setColor(setColor65,1684
+  public void setTgt(setTgt69,1741
+
+objectPrimitives/Torus.java,1315
+public class TorusTorus22,689
+	private final int MIN_SEGMENTSW =MIN_SEGMENTSW23,737
+	private final int MIN_SEGMENTSH =MIN_SEGMENTSH24,776
+	private float largeRadius;largeRadius26,818
+	private float smallRadius;smallRadius27,847
+	private int segmentsW;segmentsW28,876
+	private int segmentsH;segmentsH29,901
+	public Torus(Torus31,929
+	public Torus(Torus35,991
+	public Torus(Torus39,1058
+	public Torus(Torus43,1221
+	private void build(build53,1618
+		float r1 =r155,1645
+		float r2 =r256,1672
+		int steps1 =steps157,1699
+		int steps2 =steps258,1726
+		float step1r =step1r59,1753
+		float step2r =step2r60,1807
+		float a1a =a1a61,1861
+		float a1b =a1b62,1879
+		int vcount =vcount63,1902
+		for(float s=s65,1925
+			float a2a =a2a66,1982
+			float a2b =a2b67,2001
+			for(float s2=s269,2030
+				Vertex3d v0 =v070,2091
+				Vertex3d v1 =v171,2139
+				Vertex3d v2 =v272,2187
+				Vertex3d v3 =v373,2235
+				float ux1 =ux175,2289
+				float ux0 =ux076,2316
+				float uy0 =uy077,2347
+				float uy1 =uy178,2375
+	private Vertex3d getVertex(getVertex93,2897
+		Vertex3d vertex =vertex94,2968
+		float ca1 =ca197,3044
+		float sa1 =sa198,3080
+		float ca2 =ca299,3116
+		float sa2 =sa2100,3152
+		float centerX =centerX102,3192
+		float centerZ =centerZ103,3221
+
+objectPrimitives/Box.java,462
+public class BoxBox15,409
+	public Box(Box23,560
+	public Box(Box49,1210
+	public Box(Box54,1360
+	public Box(Box59,1547
+	private void make(make64,1668
+		float w =w66,1694
+		float h =h67,1720
+		float d =d68,1747
+		Utils.addQuad(Utils.addQuad77,2232
+		Utils.addQuad(Utils.addQuad84,2701
+		Utils.addQuad(Utils.addQuad91,3171
+		Utils.addQuad(Utils.addQuad98,3642
+		Utils.addQuad(Utils.addQuad105,4109
+		Utils.addQuad(Utils.addQuad112,4581
+
+objectPrimitives/SkyBox.java,672
+public class SkyBoxSkyBox9,177
+	private float size;size10,226
+	private float halfSize;halfSize11,248
+	private int quality;quality12,274
+	private Color4 color;color13,297
+	private Rectangle[] faces;faces14,321
+	public SkyBox(SkyBox26,442
+	private void build(build34,598
+		Rectangle north =north37,677
+		Rectangle east =east38,750
+		Rectangle south =south39,822
+		Rectangle west =west40,895
+		Rectangle up =up41,967
+		Rectangle down =down42,1037
+	public void addTexture(addTexture86,2154
+		Bitmap bitmap =bitmap87,2219
+		Shared.textureManager(Shared.textureManager88,2282
+	public void addTexture(addTexture93,2402
+			for(int i=i96,2495
+
+objectPrimitives/Rectangle.java,384
+public class RectangleRectangle7,122
+	public Rectangle(Rectangle9,175
+	public Rectangle(Rectangle14,328
+		float w =w20,491
+		float h =h21,521
+		float width5 =width523,554
+		float height5 =height524,583
+		int colspan =colspan43,982
+				int lr =lr49,1105
+				int ll =ll50,1140
+				int ur =ur51,1162
+				int ul =ul52,1190
+				Utils.addQuad(Utils.addQuad53,1212
+
+objectPrimitives/Sphere.java,575
+public class SphereSphere13,262
+	public Sphere(Sphere20,385
+	public Sphere(Sphere37,715
+	public Sphere(Sphere54,974
+	private void build(build71,1262
+		Number3d n =n75,1306
+		Number3d pos =pos76,1338
+		Number3d posFull =posFull77,1372
+			float v =v84,1536
+			float theta1 =theta185,1584
+				float u =u94,1787
+				float theta2 =theta295,1836
+		int colLength =colLength110,2216
+			int offset =offset114,2286
+				int ul =ul118,2362
+				int ur =ur119,2390
+				int br =br120,2420
+				int bl =bl121,2471
+				Utils.addQuad(Utils.addQuad123,2528
+
+parser/Max3DSParser.java,2449
+public class Max3DSParserMax3DSParser16,353
+	private final int IDENTIFIER_3DS =IDENTIFIER_3DS17,417
+	private final int MESH_BLOCK =MESH_BLOCK18,462
+	private final int OBJECT_BLOCK =OBJECT_BLOCK19,503
+	private final int TRIMESH =TRIMESH20,546
+	private final int TRI_MATERIAL =TRI_MATERIAL21,584
+	private final int VERTICES =VERTICES22,627
+	private final int FACES =FACES23,666
+	private final int TEXCOORD =TEXCOORD24,702
+	private final int TEX_MAP =TEX_MAP25,741
+	private final int TEX_NAME =TEX_NAME26,779
+	private final int TEX_FILENAME =TEX_FILENAME27,818
+	private final int MATERIAL =MATERIAL28,861
+	private int chunkID;chunkID30,902
+	private int chunkEndOffset;chunkEndOffset31,925
+	private boolean endReached;endReached32,955
+	private String currentObjName;currentObjName33,985
+	public Max3DSParser(Max3DSParser35,1020
+	public void parse(parse40,1175
+		InputStream fileIn =fileIn41,1199
+		BufferedInputStream stream =stream43,1305
+		Log.d(Log.d45,1374
+				Log.d(Log.d54,1554
+				Log.d(Log.d59,1637
+		Log.d(Log.d69,1815
+	private void readHeader(readHeader72,1864
+	private void readChunk(readChunk78,2035
+			Log.d(Log.d86,2242
+			String fileName =fileName114,2796
+			StringBuffer texture =texture115,2838
+			StringBuffer textureName =textureName118,2930
+			int dotIndex =dotIndex119,3003
+			String materialName =materialName128,3303
+			int numFaces =numFaces129,3349
+			for(int i=i131,3389
+				int faceIndex =faceIndex133,3429
+	private void skipRead(skipRead146,3646
+		for(int i=i148,3713
+	private void readVertices(readVertices154,3826
+        int numVertices =numVertices156,3925
+        for (int i =i158,3973
+	private void readFaces(readFaces170,4285
+        int triangles =triangles171,4351
+        for (int i =i172,4395
+            int[] vertexIDs =vertexIDs173,4442
+            ParseObjectFace face =face178,4658
+	private void readTexCoords(readTexCoords190,4989
+        int numVertices =numVertices191,5059
+        for (int i =i193,5107
+            Uv uv =uv194,5156
+	public Object3dContainer getParsedObject(getParsedObject201,5327
+		Log.d(Log.d202,5374
+		Object3dContainer obj =obj203,5420
+		int numObjects =numObjects204,5476
+		Bitmap texture =texture205,5517
+			Shared.textureManager(Shared.textureManager211,5652
+		for (int i =i214,5750
+			ParseObjectData o =o215,5792
+			Log.d(Log.d216,5837
+		Log.d(Log.d224,6047
+
+parser/LittleEndianDataInputStream.java,1224
+public class LittleEndianDataInputStreamLittleEndianDataInputStream13,265
+	public LittleEndianDataInputStream(LittleEndianDataInputStream15,353
+	public int available(available21,489
+	public final short readShort(readShort26,570
+	 public String readString(readString34,720
+	        byte[] b =b39,851
+	 public final int readUnsignedShort(readUnsignedShort50,1042
+	 public final char readChar(readChar61,1270
+	 public final int readInt(readInt72,1496
+	 public final long readLong(readLong85,1756
+	 public final float readFloat(readFloat99,2091
+	 public final double readDouble(readDouble103,2198
+	 public final int read(read107,2311
+	 public final void readFully(readFully111,2426
+	 public final void readFully(readFully115,2529
+	 public final int skipBytes(skipBytes119,2647
+	 public final boolean readBoolean(readBoolean123,2740
+	 public final byte readByte(readByte127,2835
+	 public int read(read131,2921
+	 public final int readUnsignedByte(readUnsignedByte135,2993
+	 public final String readLine(readLine140,3109
+	 public final String readUTF(readUTF144,3197
+	 public final void close(close148,3283
+	 private DataInputStream d;d152,3356
+	 private InputStream in;in154,3453
+
+parser/ParseObjectFace.java,280
+public class ParseObjectFaceParseObjectFace3,25
+	public int[] v;v4,57
+	public int[] uv;uv5,75
+	public int[] n;n6,94
+	public int faceLength;faceLength7,112
+	public boolean hasuv;hasuv8,137
+	public boolean hasn;hasn9,161
+	public String materialKey;materialKey10,184
+
+parser/ParseObjectData.java,1268
+public class ParseObjectDataParseObjectData21,486
+	protected int numFaces =numFaces23,564
+	public String name;name28,717
+	public ParseObjectData(ParseObjectData30,742
+	public ParseObjectData(ParseObjectData39,975
+	public AnimationObject3d getParsedObject(getParsedObject48,1246
+		AnimationObject3d obj =obj50,1378
+	public Object3d getParsedObject(getParsedObject59,1588
+		Object3d obj =obj60,1690
+	private void parseObject(parseObject68,1843
+		int numFaces =numFaces70,1954
+		int faceIndex =faceIndex71,1986
+		boolean hasBitmaps =hasBitmaps72,2008
+		for (int i =i74,2061
+			ParseObjectFace face =face75,2101
+			BitmapAsset ba =ba76,2142
+			for (int j =j79,2225
+				Number3d newVertex =newVertex80,2273
+				Uv newUv =newUv82,2330
+				Number3d newNormal =newNormal84,2412
+				Material material =material86,2498
+				Color4 newColor =newColor88,2564
+	public void calculateFaceNormal(calculateFaceNormal125,3574
+		Number3d v1 =v1127,3634
+		Number3d v2 =v2128,3676
+		Number3d v3 =v3129,3718
+		Number3d vector1 =vector1131,3764
+		Number3d vector2 =vector2132,3813
+		Number3d normal =normal134,3866
+		double normFactor =normFactor139,4105
+        int index =index147,4339
+	protected void cleanup(cleanup156,4530
+
+parser/AParser.java,3401
+public abstract class AParserAParser31,740
+	protected Resources resources;resources32,792
+	protected String resourceID;resourceID33,825
+	protected String packageID;packageID34,856
+	protected String currentMaterialKey;currentMaterialKey35,886
+	protected ParseObjectData co;co37,978
+	protected boolean firstObject;firstObject38,1010
+	protected TextureAtlas textureAtlas;textureAtlas39,1043
+	protected boolean generateMipMap;generateMipMap43,1202
+	public AParser(AParser46,1292
+	public AParser(AParser57,1602
+	protected void cleanup(cleanup67,1894
+	public Object3dContainer getParsedObject(getParsedObject79,2101
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject86,2240
+	protected String readString(readString90,2318
+		String result =result91,2389
+		byte inByte;inByte92,2422
+	protected int readInt(readInt98,2539
+	protected int readShort(readShort103,2711
+	protected float readFloat(readFloat107,2834
+	public void parse(parse114,3012
+	protected class BitmapAssetBitmapAsset125,3208
+		public Bitmap bitmap;bitmap130,3281
+		public String key;key134,3349
+		public String resourceID;resourceID138,3403
+		public float uOffset;uOffset142,3472
+		public float vOffset;vOffset146,3537
+		public float uScale;uScale150,3609
+		public float vScale;vScale154,3680
+		public boolean useForAtlasDimensions;useForAtlasDimensions155,3704
+		public BitmapAsset(BitmapAsset162,3839
+	protected class TextureAtlasTextureAtlas177,4205
+		private Bitmap atlas;atlas185,4400
+		public TextureAtlas(TextureAtlas190,4485
+		private String atlasId;atlasId193,4561
+		public void addBitmapAsset(addBitmapAsset200,4664
+			BitmapAsset existingBA =existingBA201,4712
+				int bmResourceID =bmResourceID205,4819
+					Log.d(Log.d208,4929
+				Log.d(Log.d212,5015
+				Bitmap b =b214,5079
+		public BitmapAsset getBitmapAssetByResourceID(getBitmapAssetByResourceID226,5294
+			int numBitmaps =numBitmaps228,5367
+			for(int i=i230,5409
+		public void generate(generate242,5619
+			Collections.sort(Collections.sort243,5647
+			BitmapAsset largestBitmap =largestBitmap247,5749
+			int totalWidth =totalWidth248,5797
+			int numBitmaps =numBitmaps249,5821
+			int uOffset =uOffset250,5858
+			int vOffset =vOffset251,5879
+			for (int i =i253,5902
+			for (int i =i261,6159
+				BitmapAsset ba =ba262,6202
+				BitmapAsset existingBA =existingBA263,6240
+					Bitmap b =b267,6364
+					int w =w268,6392
+					int h =h269,6420
+					int[] pixels =pixels270,6449
+			FileOutputStream fos;fos292,7041
+		public Bitmap getBitmap(getBitmap314,7586
+		public boolean hasBitmaps(hasBitmaps323,7739
+		private class BitmapHeightComparerBitmapHeightComparer333,7919
+			public int compare(compare334,7994
+				int height1 =height1335,8051
+				int height2 =height2336,8093
+		public BitmapAsset getBitmapAssetByName(getBitmapAssetByName354,8402
+			int numBitmaps =numBitmaps355,8467
+			for (int i =i357,8506
+		public void cleanup(cleanup365,8661
+			int numBitmaps =numBitmaps367,8691
+			for (int i =i369,8730
+		public void setId(setId380,8955
+		public String getId(getId384,9033
+	protected class MaterialMaterial389,9092
+		public String name;name390,9121
+		public String diffuseTextureMap;diffuseTextureMap391,9144
+		public Color4 diffuseColor;diffuseColor392,9180
+		public Material(Material394,9213
+
+parser/ObjParser.java,2594
+public class ObjParserObjParser33,804
+	private final String VERTEX =VERTEX34,865
+	private final String FACE =FACE35,902
+	private final String TEXCOORD =TEXCOORD36,937
+	private final String NORMAL =NORMAL37,977
+	private final String OBJECT =OBJECT38,1015
+	private final String MATERIAL_LIB =MATERIAL_LIB39,1052
+	private final String USE_MATERIAL =USE_MATERIAL40,1100
+	private final String NEW_MATERIAL =NEW_MATERIAL41,1148
+	private final String DIFFUSE_COLOR =DIFFUSE_COLOR42,1196
+	private final String DIFFUSE_TEX_MAP =DIFFUSE_TEX_MAP43,1241
+	public ObjParser(ObjParser51,1396
+	public void parse(parse56,1548
+		long startTime =startTime57,1572
+		InputStream fileIn =fileIn59,1636
+		BufferedReader buffer =buffer61,1742
+		String line;line63,1826
+		Log.d(Log.d67,1928
+		Log.d(Log.d68,1987
+				// String[] parts =parts74,2176
+				StringTokenizer parts =parts75,2218
+				int numTokens =numTokens76,2279
+				String type =type79,2362
+					Number3d vertex =vertex82,2434
+					Uv texCoord =texCoord96,2986
+					Number3d normal =normal101,3204
+					String objName =objName111,3650
+						Log.d(Log.d114,3752
+						Log.d(Log.d120,3886
+		long endTime =endTime131,4139
+		Log.d(Log.d132,4199
+	public Object3dContainer getParsedObject(getParsedObject135,4263
+		Log.d(Log.d136,4310
+		Object3dContainer obj =obj137,4356
+		int numObjects =numObjects138,4412
+		Bitmap texture =texture139,4453
+			Shared.textureManager(Shared.textureManager145,4588
+		for (int i =i148,4686
+			ParseObjectData o =o149,4728
+			Log.d(Log.d150,4773
+		Log.d(Log.d158,4983
+	private void readMaterialLib(readMaterialLib165,5075
+		StringBuffer resourceID =resourceID166,5122
+		StringBuffer libIDSbuf =libIDSbuf167,5180
+		int dotIndex =dotIndex168,5233
+		InputStream fileIn =fileIn175,5444
+		BufferedReader buffer =buffer177,5561
+		String line;line179,5645
+		String currentMaterial =currentMaterial180,5661
+				String[] parts =parts184,5753
+				String type =type187,5836
+					Color4 diffuseColor =diffuseColor196,6138
+						StringBuffer texture =texture201,6513
+						StringBuffer textureName =textureName204,6617
+						int bmResourceID =bmResourceID211,6870
+						Bitmap b =b213,6963
+	protected void cleanup(cleanup224,7215
+	private class ObjFaceObjFace229,7294
+		public ObjFace(ObjFace230,7344
+			boolean emptyVt =emptyVt234,7496
+			StringTokenizer parts =parts236,7591
+			StringTokenizer subParts =subParts238,7669
+			int partLength =partLength239,7745
+			for (int i =i249,8014
+				int index =index253,8141
+
+parser/MD2Parser.java,2920
+public class MD2ParserMD2Parser19,459
+	private MD2Header header;header20,520
+	private String currentTextureName;currentTextureName21,548
+	private KeyFrame[] frames;frames22,585
+	public MD2Parser(MD2Parser24,616
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject29,768
+		Log.d(Log.d30,824
+		Bitmap texture =texture31,870
+		AnimationObject3d animObj;animObj32,896
+			Shared.textureManager(Shared.textureManager37,1033
+		Log.d(Log.d40,1129
+		Log.d(Log.d47,1340
+	public void parse(parse55,1450
+		InputStream fileIn =fileIn56,1474
+		BufferedInputStream stream =stream58,1580
+		Log.d(Log.d63,1709
+			byte[] bytes =bytes67,1836
+	private void getMaterials(getMaterials78,2104
+		ByteArrayInputStream ba =ba80,2199
+		LittleEndianDataInputStream is =is82,2326
+		for (int i =i84,2401
+			String skinPath =skinPath85,2448
+			StringBuffer texture =texture86,2489
+			StringBuffer textureName =textureName91,2672
+			int dotIndex =dotIndex92,2745
+	private void getTexCoords(getTexCoords104,3071
+		ByteArrayInputStream ba =ba106,3166
+		LittleEndianDataInputStream is =is109,3306
+		for (int i =i111,3381
+	private void getFrames(getFrames116,3571
+		ByteArrayInputStream ba =ba118,3663
+		LittleEndianDataInputStream is =is120,3792
+		for (int i =i123,3935
+			float scaleX =scaleX124,3983
+			float scaleY =scaleY125,4018
+			float scaleZ =scaleZ126,4053
+			float translateX =translateX127,4088
+			float translateY =translateY128,4127
+			float translateZ =translateZ129,4166
+			String name =name130,4205
+			Log.d(Log.d137,4422
+			int index =index139,4522
+			for (int j =j141,4543
+				int normalIndex =normalIndex146,4807
+	private void getTriangles(getTriangles156,5043
+		ByteArrayInputStream ba =ba158,5138
+		LittleEndianDataInputStream is =is161,5280
+		int[] indices =indices162,5353
+		int index =index163,5404
+		for (int i =i165,5424
+			int[] vertexIDs =vertexIDs166,5475
+			int[] uvIDS =uvIDS167,5509
+			ParseObjectFace f =f177,5860
+		for(int j=j188,6117
+	private class MD2HeaderMD2Header194,6209
+		public int id;id195,6237
+		public int version;version196,6255
+		public int skinWidth;skinWidth197,6278
+		public int skinHeight;skinHeight198,6303
+		public int frameSize;frameSize199,6329
+		public int numSkins;numSkins200,6354
+		public int numVerts;numVerts201,6378
+		public int numTexCoord;numTexCoord202,6402
+		public int numTriangles;numTriangles203,6429
+		public int numGLCommands;numGLCommands204,6457
+		public int numFrames;numFrames205,6486
+		public int offsetSkins;offsetSkins206,6511
+		public int offsetTexCoord;offsetTexCoord207,6538
+		public int offsetTriangles;offsetTriangles208,6568
+		public int offsetFrames;offsetFrames209,6599
+		public int offsetGLCommands;offsetGLCommands210,6627
+		public int offsetEnd;offsetEnd211,6659
+		public void parse(parse213,6686
+
+parser/IParser.java,223
+public interface IParserIParser12,188
+	public void parse(parse16,261
+	public Object3dContainer getParsedObject(getParsedObject21,340
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject26,452
+
+parser/Parser.java,91
+public class ParserParser11,217
+	public static IParser createParser(createParser26,489
+
+Shared.java,347
+public class SharedShared10,214
+	public static Context context(context17,365
+	public static void context(context21,427
+	public static Renderer renderer(renderer26,496
+	public static void renderer(renderer30,561
+	public static TextureManager textureManager(textureManager38,717
+	public static void textureManager(textureManager42,800
+
+animation/AnimationObject3d.java,2035
+public class AnimationObject3dAnimationObject3d8,158
+	private int numFrames;numFrames9,209
+	private KeyFrame[] frames;frames10,234
+	private int currentFrameIndex;currentFrameIndex11,263
+	private long startTime;startTime12,296
+	private long currentTime;currentTime13,322
+	private boolean isPlaying;isPlaying14,350
+	private float interpolation;interpolation15,379
+	private float fps =fps16,410
+	private boolean updateVertices =updateVertices17,436
+	private String currentFrameName;currentFrameName18,478
+	private int loopStartIndex;loopStartIndex19,513
+	private boolean loop =loop20,543
+	public AnimationObject3d(AnimationObject3d22,577
+	public AnimationObject3d(AnimationObject3d32,890
+	public int getCurrentFrame(getCurrentFrame39,1108
+	public void addFrame(addFrame43,1176
+	public void setFrames(setFrames47,1263
+	public void play(play51,1339
+	public void play(play58,1477
+		for (int i =i62,1567
+	public void play(play74,1797
+	public void stop(stop79,1887
+	public void pause(pause84,1964
+	public void update(update88,2016
+		KeyFrame currentFrame =currentFrame92,2136
+		KeyFrame nextFrame =nextFrame93,2190
+		float[] currentVerts =currentVerts104,2450
+		float[] nextVerts =nextVerts105,2504
+		float[] currentNormals =currentNormals106,2552
+		float[] nextNormals =nextNormals107,2607
+		int numVerts =numVerts108,2656
+		float[] interPolatedVerts =interPolatedVerts110,2699
+		float[] interPolatedNormals =interPolatedNormals111,2751
+		for (int i =i113,2807
+	public float getFps(getFps138,3889
+	public void setFps(setFps142,3936
+	public Object3d clone(clone146,3996
+		Vertices v =v148,4043
+		FacesBufferedList f =f149,4102
+		//KeyFrame[] fr =fr150,4164
+		AnimationObject3d clone =clone152,4229
+	public KeyFrame[] getClonedFrames(getClonedFrames167,4723
+		int len =len169,4765
+		KeyFrame[] cl =cl170,4793
+		for(int i=i172,4835
+	public boolean getUpdateVertices(getUpdateVertices180,4928
+	public void setUpdateVertices(setUpdateVertices184,4999
+
+animation/KeyFrame.java,1015
+public class KeyFrameKeyFrame5,58
+	private String name;name6,83
+	private float[] vertices;vertices7,106
+	private float[] normals;normals8,134
+	private int[] indices;indices10,163
+	public KeyFrame(KeyFrame12,191
+	public KeyFrame(KeyFrame18,300
+	public String getName(getName24,429
+	public float[] getVertices(getVertices28,479
+	public int[] getIndices(getIndices32,538
+	public float[] getNormals(getNormals36,593
+	public void setIndices(setIndices40,651
+		float[] compressed =compressed42,720
+		int len =len44,797
+		int vi =vi45,826
+		int ii =ii46,841
+		int normalIndex =normalIndex47,856
+		for(int i=i49,884
+		int vertLen =vertLen58,1111
+		for(int i=i60,1149
+			Number3d normal =normal62,1187
+	public Number3d calculateFaceNormal(calculateFaceNormal79,1794
+		Number3d vector1 =vector181,1875
+		Number3d vector2 =vector282,1924
+		Number3d normal =normal84,1977
+		double normFactor =normFactor89,2216
+	public KeyFrame clone(clone98,2435
+		KeyFrame k =k100,2465
+
+Utils.java,679
+public class UtilsUtils15,304
+	public static final float DEG =DEG17,328
+	private static final int BYTES_PER_FLOAT =BYTES_PER_FLOAT19,391
+	public static Bitmap makeBitmapFromResourceId(makeBitmapFromResourceId24,540
+		InputStream is =is26,619
+		Bitmap bitmap;bitmap28,689
+	public static Bitmap makeBitmapFromResourceId(makeBitmapFromResourceId45,1024
+	public static void addQuad(addQuad53,1237
+	public static FloatBuffer makeFloatBuffer3(makeFloatBuffer359,1511
+		ByteBuffer b =b61,1590
+		FloatBuffer buffer =buffer63,1693
+	public static FloatBuffer makeFloatBuffer4(makeFloatBuffer471,1840
+		ByteBuffer b =b73,1929
+		FloatBuffer buffer =buffer75,2032
+
+Min3d.java,73
+public class Min3dMin3d3,18
+	public static final String TAG =TAG5,42
+
+vos/AbstractDirtyManaged.java,266
+public abstract class AbstractDirtyManagedAbstractDirtyManaged7,105
+	public AbstractDirtyManaged(AbstractDirtyManaged12,242
+	public boolean isDirty(isDirty17,327
+	public void setDirtyFlag(setDirtyFlag22,383
+	public void clearDirtyFlag(clearDirtyFlag28,484
+
+vos/FloatManaged.java,144
+public class FloatManagedFloatManaged5,63
+	public FloatManaged(FloatManaged9,145
+	public float get(get15,249
+	public void set(set19,292
+
+vos/Face.java,158
+public class FaceFace7,167
+	public short a;a9,190
+	public short b;b10,208
+	public short c;c11,226
+	public Face(Face13,247
+	public Face(Face23,405
+
+vos/Number3dManaged.java,777
+public class Number3dManagedNumber3dManaged14,213
+	public Number3dManaged(Number3dManaged22,369
+	public Number3dManaged(Number3dManaged32,529
+	public float getX(getX42,722
+	public void setX(setX46,766
+	public float getY(getY51,832
+	public void setY(setY55,876
+	public float getZ(getZ60,942
+	public void setZ(setZ64,986
+	public void setAll(setAll69,1052
+	public void setAllFrom(setAllFrom77,1169
+	public void setAllFrom(setAllFrom85,1278
+	public Number3d toNumber3d(toNumber3d93,1409
+	public String toString(toString99,1497
+	public FloatBuffer toFloatBuffer(toFloatBuffer107,1608
+	public void toFloatBuffer(toFloatBuffer115,1738
+	public FloatBuffer floatBuffer(floatBuffer127,1969
+	public void commitToFloatBuffer(commitToFloatBuffer135,2063
+
+vos/CameraRays.java,146
+public class CameraRaysCameraRays6,71
+  public CameraRays(CameraRays11,173
+    FrustumManaged frustum =frustum12,230
+    float n =n19,345
+
+vos/LightType.java,137
+	DIRECTIONAL (DIRECTIONAL5,49
+	POSITIONAL (POSITIONAL6,69
+	private LightType(LightType11,182
+	public float glValue(glValue16,253
+
+vos/TextureVo.java,321
+public class TextureVoTextureVo21,771
+	public String textureId;textureId26,890
+	public boolean repeatU =repeatU32,1076
+	public boolean repeatV =repeatV33,1109
+	public float offsetU =offsetU38,1235
+	public float offsetV =offsetV39,1263
+	public TextureVo(TextureVo49,1479
+	public TextureVo(TextureVo55,1623
+
+vos/ShadeModelManaged.java,170
+public class ShadeModelManagedShadeModelManaged6,65
+	public ShadeModelManaged(ShadeModelManaged10,166
+	public ShadeModel get(get16,272
+	public void set(set20,329
+
+vos/FogType.java,127
+	LINEAR (LINEAR6,97
+	EXP (EXP7,124
+	EXP2 (EXP28,145
+	private FogType(FogType12,204
+	public int glValue(glValue17,271
+
+vos/Light.java,1606
+public class LightLight13,221
+  public Number3dManaged 		position;position18,369
+  public Number3dManaged 		direction;direction23,478
+  public Color4Managed 		ambient;ambient25,522
+  public Color4Managed 		diffuse;diffuse26,557
+  public Color4Managed 		specular;specular27,592
+  public Color4Managed 		emissive;emissive28,628
+  public Light(Light32,699
+  public Number3dManaged attenuation(attenuation58,1467
+  public FloatBuffer positionAndTypeBuffer(positionAndTypeBuffer62,1542
+  public BooleanManaged isVisibleBm(isVisibleBm66,1634
+  public boolean isVisible(isVisible70,1705
+  public void isVisible(isVisible74,1775
+  public LightType type(type82,1927
+  public void type(type87,1986
+  public float spotExponent(spotExponent97,2268
+  public void spotExponent(spotExponent101,2342
+  public float spotCutoffAngle(spotCutoffAngle112,2630
+  public void spotCutoffAngle(spotCutoffAngle116,2710
+  public void spotCutoffAngleNone(spotCutoffAngleNone132,3085
+  public float attenuationConstant(attenuationConstant137,3167
+  public void attenuationConstant(attenuationConstant141,3248
+  public float attenuationLinear(attenuationLinear147,3383
+  public void attenuationLinear(attenuationLinear151,3462
+  public float attenuationQuadratic(attenuationQuadratic157,3595
+  public void attenuationQuadratic(attenuationQuadratic161,3677
+  public void attenuationSetAll(attenuationSetAll171,3940
+  public void setAllDirty(setAllDirty179,4123
+  public void onDirty(onDirty193,4482
+  public void commitPositionAndTypeBuffer(commitPositionAndTypeBuffer212,4812
+
+vos/CameraVo.java,280
+public class CameraVoCameraVo6,101
+  public Number3d position =position8,127
+  public Number3d target =target9,206
+  public Number3d upAxis =upAxis10,255
+  public FrustumManaged frustum =frustum12,307
+  public CameraVo(CameraVo14,371
+  public double fovy(fovy18,404
+
+vos/BooleanManaged.java,154
+public class BooleanManagedBooleanManaged5,63
+	public BooleanManaged(BooleanManaged9,149
+	public boolean get(get15,257
+	public void set(set19,302
+
+vos/Vertex3d.java,221
+public class Vertex3dVertex3d8,175
+	public Number3d		position =position10,202
+	public Uv 			uv;uv11,248
+	public Number3d		normal;normal12,275
+	public Color4 		color;color13,309
+	public Vertex3d(Vertex3d16,345
+
+vos/Color4Managed.java,857
+public class Color4ManagedColor4Managed14,349
+	public Color4Managed(Color4Managed24,525
+	public Color4Managed(Color4Managed39,744
+	public Color4Managed(Color4Managed56,1049
+	public void setAll(setAll73,1359
+	public void setAll(setAll83,1500
+	public Color4 toColor4(toColor488,1619
+	public void setAll(setAll96,1777
+	public void setAll(setAll106,2033
+	public short r(r111,2130
+	public void r(r115,2171
+	public short g(g121,2239
+	public void g(g125,2280
+	public short b(b131,2348
+	public void b(b135,2389
+	public short a(a141,2457
+	public void a(a145,2498
+	public FloatBuffer toFloatBuffer(toFloatBuffer154,2601
+	public void toFloatBuffer(toFloatBuffer167,2815
+	public FloatBuffer floatBuffer(floatBuffer182,3140
+	public void commitToFloatBuffer(commitToFloatBuffer190,3234
+	public String toString(toString196,3320
+
+vos/FrustumManaged.java,648
+public class FrustumManagedFrustumManaged9,169
+  public FrustumManaged(FrustumManaged18,391
+  public FrustumManaged(FrustumManaged30,606
+  public float shortSideLength(shortSideLength51,1283
+  public void shortSideLength(shortSideLength55,1356
+  public float horizontalCenter(horizontalCenter60,1481
+  public void horizontalCenter(horizontalCenter64,1556
+  public float verticalCenter(verticalCenter69,1685
+  public void verticalCenter(verticalCenter73,1756
+  public float zNear(zNear81,1936
+  public void zNear(zNear85,1989
+  public double fov(fov90,2074
+  public float zFar(zFar97,2219
+  public void zFar(zFar101,2270
+
+vos/RenderType.java,286
+	POINTS (POINTS7,102
+	LINES (LINES8,129
+	LINE_LOOP (LINE_LOOP9,154
+	LINE_STRIP (LINE_STRIP10,187
+	TRIANGLES (TRIANGLES11,222
+	TRIANGLE_STRIP (TRIANGLE_STRIP12,255
+	TRIANGLE_FAN (TRIANGLE_FAN13,298
+	private RenderType(RenderType17,373
+	public int glValue(glValue22,443
+
+vos/TexEnvxVo.java,213
+public class TexEnvxVoTexEnvxVo11,237
+	public int pname =pname13,265
+	public int param =param14,312
+	public TexEnvxVo(TexEnvxVo16,354
+	public TexEnvxVo(TexEnvxVo20,386
+	public void setAll(setAll29,513
+
+vos/Uv.java,148
+public class UvUv6,76
+	public float u;u8,97
+	public float v;v9,115
+	public Uv(Uv11,136
+	public Uv(Uv17,181
+	public Uv clone(clone23,246
+
+vos/Number3d.java,1218
+public class Number3dNumber3d8,241
+  public float x;x10,268
+  public float y;y11,287
+  public float z;z12,306
+  public Number3d(Number3d17,385
+  public Number3d(Number3d24,455
+  public void setAll(setAll33,565
+  public void setX(setX40,668
+  public void setY(setY41,710
+  public void setZ(setZ42,752
+  public void setAllFrom(setAllFrom45,800
+  public void normalize(normalize52,897
+    float mod =mod54,929
+  public void add(add65,1157
+  public void subtract(subtract72,1261
+  public void multiply(multiply79,1370
+  public float length(length86,1470
+  public Number3d clone(clone91,1588
+  public void rotateX(rotateX96,1661
+    float cosRY =cosRY98,1702
+    float sinRY =sinRY99,1746
+  public void rotateY(rotateY107,1940
+    float cosRY =cosRY109,1981
+    float sinRY =sinRY110,2025
+  public void rotateZ(rotateZ118,2222
+    float cosRY =cosRY120,2263
+    float sinRY =sinRY121,2307
+  public String toString(toString131,2519
+  public static Number3d add(add138,2604
+  public static Number3d subtract(subtract143,2729
+  public static Number3d multiply(multiply148,2860
+  public static Number3d cross(cross153,2991
+  public static float dot(dot158,3167
+
+vos/Color4.java,479
+public class Color4Color413,255
+	public short r;r15,280
+	public short g;g16,298
+	public short b;b17,316
+	public short a;a18,334
+	public Color4(Color421,358
+	public Color4(Color429,463
+	public Color4(Color440,658
+	public Color4(Color451,875
+	public void setAll(setAll62,1085
+	public void setAll(setAll73,1286
+	public String toString(toString82,1527
+	public FloatBuffer toFloatBuffer(toFloatBuffer87,1624
+	public void toFloatBuffer(toFloatBuffer92,1715
+
+vos/ShadeModel.java,123
+	SMOOTH (SMOOTH7,102
+	FLAT (FLAT8,129
+	private ShadeModel(ShadeModel13,193
+	public int glConstant(glConstant18,272
+
+interfaces/IDirtyParent.java,83
+public interface IDirtyParentIDirtyParent3,29
+	public void onDirty(onDirty5,64
+
+interfaces/IObject3dContainer.java,443
+public interface IObject3dContainerIObject3dContainer10,213
+	public void addChild(addChild12,254
+	public void addChildAt(addChildAt13,295
+	public boolean removeChild(removeChild14,350
+	public Object3d removeChildAt(removeChildAt15,397
+	public Object3d getChildAt(getChildAt16,442
+	public Object3d getChildByName(getChildByName17,484
+	public int getChildIndexOf(getChildIndexOf18,534
+	public int numChildren(numChildren19,578
+
+interfaces/ISceneController.java,416
+public interface ISceneControllerISceneController15,369
+	public void initScene(initScene25,722
+	public void updateScene(updateScene31,887
+	public Handler getInitSceneHandler(getInitSceneHandler34,922
+	public Runnable getInitSceneRunnable(getInitSceneRunnable35,962
+	public Handler getUpdateSceneHandler(getUpdateSceneHandler37,1007
+	public Runnable getUpdateSceneRunnable(getUpdateSceneRunnable38,1049
+
+interfaces/IDirtyManaged.java,183
+public interface IDirtyManagedIDirtyManaged3,29
+	public boolean isDirty(isDirty5,65
+	public void setDirtyFlag(setDirtyFlag6,93
+	public void clearDirtyFlag(clearDirtyFlag7,123

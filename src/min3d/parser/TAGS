@@ -1,0 +1,366 @@
+
+Max3DSParser.java,2449
+public class Max3DSParserMax3DSParser16,353
+	private final int IDENTIFIER_3DS =IDENTIFIER_3DS17,417
+	private final int MESH_BLOCK =MESH_BLOCK18,462
+	private final int OBJECT_BLOCK =OBJECT_BLOCK19,503
+	private final int TRIMESH =TRIMESH20,546
+	private final int TRI_MATERIAL =TRI_MATERIAL21,584
+	private final int VERTICES =VERTICES22,627
+	private final int FACES =FACES23,666
+	private final int TEXCOORD =TEXCOORD24,702
+	private final int TEX_MAP =TEX_MAP25,741
+	private final int TEX_NAME =TEX_NAME26,779
+	private final int TEX_FILENAME =TEX_FILENAME27,818
+	private final int MATERIAL =MATERIAL28,861
+	private int chunkID;chunkID30,902
+	private int chunkEndOffset;chunkEndOffset31,925
+	private boolean endReached;endReached32,955
+	private String currentObjName;currentObjName33,985
+	public Max3DSParser(Max3DSParser35,1020
+	public void parse(parse40,1175
+		InputStream fileIn =fileIn41,1199
+		BufferedInputStream stream =stream43,1305
+		Log.d(Log.d45,1374
+				Log.d(Log.d54,1554
+				Log.d(Log.d59,1637
+		Log.d(Log.d69,1815
+	private void readHeader(readHeader72,1864
+	private void readChunk(readChunk78,2035
+			Log.d(Log.d86,2242
+			String fileName =fileName114,2796
+			StringBuffer texture =texture115,2838
+			StringBuffer textureName =textureName118,2930
+			int dotIndex =dotIndex119,3003
+			String materialName =materialName128,3303
+			int numFaces =numFaces129,3349
+			for(int i=i131,3389
+				int faceIndex =faceIndex133,3429
+	private void skipRead(skipRead146,3646
+		for(int i=i148,3713
+	private void readVertices(readVertices154,3826
+        int numVertices =numVertices156,3925
+        for (int i =i158,3973
+	private void readFaces(readFaces170,4285
+        int triangles =triangles171,4351
+        for (int i =i172,4395
+            int[] vertexIDs =vertexIDs173,4442
+            ParseObjectFace face =face178,4658
+	private void readTexCoords(readTexCoords190,4989
+        int numVertices =numVertices191,5059
+        for (int i =i193,5107
+            Uv uv =uv194,5156
+	public Object3dContainer getParsedObject(getParsedObject201,5327
+		Log.d(Log.d202,5374
+		Object3dContainer obj =obj203,5420
+		int numObjects =numObjects204,5476
+		Bitmap texture =texture205,5517
+			Shared.textureManager(Shared.textureManager211,5652
+		for (int i =i214,5750
+			ParseObjectData o =o215,5792
+			Log.d(Log.d216,5837
+		Log.d(Log.d224,6047
+
+LittleEndianDataInputStream.java,1224
+public class LittleEndianDataInputStreamLittleEndianDataInputStream13,265
+	public LittleEndianDataInputStream(LittleEndianDataInputStream15,353
+	public int available(available21,489
+	public final short readShort(readShort26,570
+	 public String readString(readString34,720
+	        byte[] b =b39,851
+	 public final int readUnsignedShort(readUnsignedShort50,1042
+	 public final char readChar(readChar61,1270
+	 public final int readInt(readInt72,1496
+	 public final long readLong(readLong85,1756
+	 public final float readFloat(readFloat99,2091
+	 public final double readDouble(readDouble103,2198
+	 public final int read(read107,2311
+	 public final void readFully(readFully111,2426
+	 public final void readFully(readFully115,2529
+	 public final int skipBytes(skipBytes119,2647
+	 public final boolean readBoolean(readBoolean123,2740
+	 public final byte readByte(readByte127,2835
+	 public int read(read131,2921
+	 public final int readUnsignedByte(readUnsignedByte135,2993
+	 public final String readLine(readLine140,3109
+	 public final String readUTF(readUTF144,3197
+	 public final void close(close148,3283
+	 private DataInputStream d;d152,3356
+	 private InputStream in;in154,3453
+
+ParseObjectFace.java,280
+public class ParseObjectFaceParseObjectFace3,25
+	public int[] v;v4,57
+	public int[] uv;uv5,75
+	public int[] n;n6,94
+	public int faceLength;faceLength7,112
+	public boolean hasuv;hasuv8,137
+	public boolean hasn;hasn9,161
+	public String materialKey;materialKey10,184
+
+ParseObjectData.java,1268
+public class ParseObjectDataParseObjectData21,486
+	protected int numFaces =numFaces23,564
+	public String name;name28,717
+	public ParseObjectData(ParseObjectData30,742
+	public ParseObjectData(ParseObjectData39,975
+	public AnimationObject3d getParsedObject(getParsedObject48,1246
+		AnimationObject3d obj =obj50,1378
+	public Object3d getParsedObject(getParsedObject59,1588
+		Object3d obj =obj60,1690
+	private void parseObject(parseObject68,1843
+		int numFaces =numFaces70,1954
+		int faceIndex =faceIndex71,1986
+		boolean hasBitmaps =hasBitmaps72,2008
+		for (int i =i74,2061
+			ParseObjectFace face =face75,2101
+			BitmapAsset ba =ba76,2142
+			for (int j =j79,2225
+				Number3d newVertex =newVertex80,2273
+				Uv newUv =newUv82,2330
+				Number3d newNormal =newNormal84,2412
+				Material material =material86,2498
+				Color4 newColor =newColor88,2564
+	public void calculateFaceNormal(calculateFaceNormal125,3574
+		Number3d v1 =v1127,3634
+		Number3d v2 =v2128,3676
+		Number3d v3 =v3129,3718
+		Number3d vector1 =vector1131,3764
+		Number3d vector2 =vector2132,3813
+		Number3d normal =normal134,3866
+		double normFactor =normFactor139,4105
+        int index =index147,4339
+	protected void cleanup(cleanup156,4530
+
+AParser.java,3401
+public abstract class AParserAParser31,740
+	protected Resources resources;resources32,792
+	protected String resourceID;resourceID33,825
+	protected String packageID;packageID34,856
+	protected String currentMaterialKey;currentMaterialKey35,886
+	protected ParseObjectData co;co37,978
+	protected boolean firstObject;firstObject38,1010
+	protected TextureAtlas textureAtlas;textureAtlas39,1043
+	protected boolean generateMipMap;generateMipMap43,1202
+	public AParser(AParser46,1292
+	public AParser(AParser57,1602
+	protected void cleanup(cleanup67,1894
+	public Object3dContainer getParsedObject(getParsedObject79,2101
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject86,2240
+	protected String readString(readString90,2318
+		String result =result91,2389
+		byte inByte;inByte92,2422
+	protected int readInt(readInt98,2539
+	protected int readShort(readShort103,2711
+	protected float readFloat(readFloat107,2834
+	public void parse(parse114,3012
+	protected class BitmapAssetBitmapAsset125,3208
+		public Bitmap bitmap;bitmap130,3281
+		public String key;key134,3349
+		public String resourceID;resourceID138,3403
+		public float uOffset;uOffset142,3472
+		public float vOffset;vOffset146,3537
+		public float uScale;uScale150,3609
+		public float vScale;vScale154,3680
+		public boolean useForAtlasDimensions;useForAtlasDimensions155,3704
+		public BitmapAsset(BitmapAsset162,3839
+	protected class TextureAtlasTextureAtlas177,4205
+		private Bitmap atlas;atlas185,4400
+		public TextureAtlas(TextureAtlas190,4485
+		private String atlasId;atlasId193,4561
+		public void addBitmapAsset(addBitmapAsset200,4664
+			BitmapAsset existingBA =existingBA201,4712
+				int bmResourceID =bmResourceID205,4819
+					Log.d(Log.d208,4929
+				Log.d(Log.d212,5015
+				Bitmap b =b214,5079
+		public BitmapAsset getBitmapAssetByResourceID(getBitmapAssetByResourceID226,5294
+			int numBitmaps =numBitmaps228,5367
+			for(int i=i230,5409
+		public void generate(generate242,5619
+			Collections.sort(Collections.sort243,5647
+			BitmapAsset largestBitmap =largestBitmap247,5749
+			int totalWidth =totalWidth248,5797
+			int numBitmaps =numBitmaps249,5821
+			int uOffset =uOffset250,5858
+			int vOffset =vOffset251,5879
+			for (int i =i253,5902
+			for (int i =i261,6159
+				BitmapAsset ba =ba262,6202
+				BitmapAsset existingBA =existingBA263,6240
+					Bitmap b =b267,6364
+					int w =w268,6392
+					int h =h269,6420
+					int[] pixels =pixels270,6449
+			FileOutputStream fos;fos292,7041
+		public Bitmap getBitmap(getBitmap314,7586
+		public boolean hasBitmaps(hasBitmaps323,7739
+		private class BitmapHeightComparerBitmapHeightComparer333,7919
+			public int compare(compare334,7994
+				int height1 =height1335,8051
+				int height2 =height2336,8093
+		public BitmapAsset getBitmapAssetByName(getBitmapAssetByName354,8402
+			int numBitmaps =numBitmaps355,8467
+			for (int i =i357,8506
+		public void cleanup(cleanup365,8661
+			int numBitmaps =numBitmaps367,8691
+			for (int i =i369,8730
+		public void setId(setId380,8955
+		public String getId(getId384,9033
+	protected class MaterialMaterial389,9092
+		public String name;name390,9121
+		public String diffuseTextureMap;diffuseTextureMap391,9144
+		public Color4 diffuseColor;diffuseColor392,9180
+		public Material(Material394,9213
+
+ObjParser.java,2594
+public class ObjParserObjParser33,804
+	private final String VERTEX =VERTEX34,865
+	private final String FACE =FACE35,902
+	private final String TEXCOORD =TEXCOORD36,937
+	private final String NORMAL =NORMAL37,977
+	private final String OBJECT =OBJECT38,1015
+	private final String MATERIAL_LIB =MATERIAL_LIB39,1052
+	private final String USE_MATERIAL =USE_MATERIAL40,1100
+	private final String NEW_MATERIAL =NEW_MATERIAL41,1148
+	private final String DIFFUSE_COLOR =DIFFUSE_COLOR42,1196
+	private final String DIFFUSE_TEX_MAP =DIFFUSE_TEX_MAP43,1241
+	public ObjParser(ObjParser51,1396
+	public void parse(parse56,1548
+		long startTime =startTime57,1572
+		InputStream fileIn =fileIn59,1636
+		BufferedReader buffer =buffer61,1742
+		String line;line63,1826
+		Log.d(Log.d67,1928
+		Log.d(Log.d68,1987
+				// String[] parts =parts74,2176
+				StringTokenizer parts =parts75,2218
+				int numTokens =numTokens76,2279
+				String type =type79,2362
+					Number3d vertex =vertex82,2434
+					Uv texCoord =texCoord96,2986
+					Number3d normal =normal101,3204
+					String objName =objName111,3650
+						Log.d(Log.d114,3752
+						Log.d(Log.d120,3886
+		long endTime =endTime131,4139
+		Log.d(Log.d132,4199
+	public Object3dContainer getParsedObject(getParsedObject135,4263
+		Log.d(Log.d136,4310
+		Object3dContainer obj =obj137,4356
+		int numObjects =numObjects138,4412
+		Bitmap texture =texture139,4453
+			Shared.textureManager(Shared.textureManager145,4588
+		for (int i =i148,4686
+			ParseObjectData o =o149,4728
+			Log.d(Log.d150,4773
+		Log.d(Log.d158,4983
+	private void readMaterialLib(readMaterialLib165,5075
+		StringBuffer resourceID =resourceID166,5122
+		StringBuffer libIDSbuf =libIDSbuf167,5180
+		int dotIndex =dotIndex168,5233
+		InputStream fileIn =fileIn175,5444
+		BufferedReader buffer =buffer177,5561
+		String line;line179,5645
+		String currentMaterial =currentMaterial180,5661
+				String[] parts =parts184,5753
+				String type =type187,5836
+					Color4 diffuseColor =diffuseColor196,6138
+						StringBuffer texture =texture201,6513
+						StringBuffer textureName =textureName204,6617
+						int bmResourceID =bmResourceID211,6870
+						Bitmap b =b213,6963
+	protected void cleanup(cleanup224,7215
+	private class ObjFaceObjFace229,7294
+		public ObjFace(ObjFace230,7344
+			boolean emptyVt =emptyVt234,7496
+			StringTokenizer parts =parts236,7591
+			StringTokenizer subParts =subParts238,7669
+			int partLength =partLength239,7745
+			for (int i =i249,8014
+				int index =index253,8141
+
+MD2Parser.java,2920
+public class MD2ParserMD2Parser19,459
+	private MD2Header header;header20,520
+	private String currentTextureName;currentTextureName21,548
+	private KeyFrame[] frames;frames22,585
+	public MD2Parser(MD2Parser24,616
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject29,768
+		Log.d(Log.d30,824
+		Bitmap texture =texture31,870
+		AnimationObject3d animObj;animObj32,896
+			Shared.textureManager(Shared.textureManager37,1033
+		Log.d(Log.d40,1129
+		Log.d(Log.d47,1340
+	public void parse(parse55,1450
+		InputStream fileIn =fileIn56,1474
+		BufferedInputStream stream =stream58,1580
+		Log.d(Log.d63,1709
+			byte[] bytes =bytes67,1836
+	private void getMaterials(getMaterials78,2104
+		ByteArrayInputStream ba =ba80,2199
+		LittleEndianDataInputStream is =is82,2326
+		for (int i =i84,2401
+			String skinPath =skinPath85,2448
+			StringBuffer texture =texture86,2489
+			StringBuffer textureName =textureName91,2672
+			int dotIndex =dotIndex92,2745
+	private void getTexCoords(getTexCoords104,3071
+		ByteArrayInputStream ba =ba106,3166
+		LittleEndianDataInputStream is =is109,3306
+		for (int i =i111,3381
+	private void getFrames(getFrames116,3571
+		ByteArrayInputStream ba =ba118,3663
+		LittleEndianDataInputStream is =is120,3792
+		for (int i =i123,3935
+			float scaleX =scaleX124,3983
+			float scaleY =scaleY125,4018
+			float scaleZ =scaleZ126,4053
+			float translateX =translateX127,4088
+			float translateY =translateY128,4127
+			float translateZ =translateZ129,4166
+			String name =name130,4205
+			Log.d(Log.d137,4422
+			int index =index139,4522
+			for (int j =j141,4543
+				int normalIndex =normalIndex146,4807
+	private void getTriangles(getTriangles156,5043
+		ByteArrayInputStream ba =ba158,5138
+		LittleEndianDataInputStream is =is161,5280
+		int[] indices =indices162,5353
+		int index =index163,5404
+		for (int i =i165,5424
+			int[] vertexIDs =vertexIDs166,5475
+			int[] uvIDS =uvIDS167,5509
+			ParseObjectFace f =f177,5860
+		for(int j=j188,6117
+	private class MD2HeaderMD2Header194,6209
+		public int id;id195,6237
+		public int version;version196,6255
+		public int skinWidth;skinWidth197,6278
+		public int skinHeight;skinHeight198,6303
+		public int frameSize;frameSize199,6329
+		public int numSkins;numSkins200,6354
+		public int numVerts;numVerts201,6378
+		public int numTexCoord;numTexCoord202,6402
+		public int numTriangles;numTriangles203,6429
+		public int numGLCommands;numGLCommands204,6457
+		public int numFrames;numFrames205,6486
+		public int offsetSkins;offsetSkins206,6511
+		public int offsetTexCoord;offsetTexCoord207,6538
+		public int offsetTriangles;offsetTriangles208,6568
+		public int offsetFrames;offsetFrames209,6599
+		public int offsetGLCommands;offsetGLCommands210,6627
+		public int offsetEnd;offsetEnd211,6659
+		public void parse(parse213,6686
+
+IParser.java,223
+public interface IParserIParser12,188
+	public void parse(parse16,261
+	public Object3dContainer getParsedObject(getParsedObject21,340
+	public AnimationObject3d getParsedAnimationObject(getParsedAnimationObject26,452
+
+Parser.java,91
+public class ParserParser11,217
+	public static IParser createParser(createParser26,489

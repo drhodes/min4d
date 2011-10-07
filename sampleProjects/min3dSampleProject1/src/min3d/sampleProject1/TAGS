@@ -1,0 +1,317 @@
+
+ExampleLoadObjFile.java,230
+public class ExampleLoadObjFileExampleLoadObjFile15,280
+	private Object3dContainer objModel;objModel16,340
+	public void initScene(initScene19,392
+		IParser parser =parser23,464
+	public void updateScene(updateScene33,767
+
+ExampleVertexColors.java,146
+public class ExampleVertexColorsExampleVertexColors10,163
+	public void initScene(initScene14,251
+	public void updateScene(updateScene31,675
+
+ExampleTextureWrap.java,220
+public class ExampleTextureWrapExampleTextureWrap17,370
+	public void initScene(initScene23,495
+		Bitmap b =b30,678
+		Shared.textureManager(Shared.textureManager31,747
+	public void updateScene(updateScene42,938
+
+ExampleKeyframeAnimation.java,524
+public class ExampleKeyframeAnimationExampleKeyframeAnimation14,329
+	private AnimationObject3d ogre;ogre16,428
+	private Button flipButton;flipButton17,463
+	private Button saluteButton;saluteButton18,492
+	private CheckBox checkBox;checkBox19,523
+	protected void onCreateSetContentView(onCreateSetContentView22,567
+        LinearLayout ll =ll26,667
+    public void onClick(onClick37,1109
+	public void initScene(initScene51,1533
+		IParser parser =parser55,1604
+	public void updateScene(updateScene68,1969
+
+ExampleMipMap.java,268
+public class ExampleMipMapExampleMipMap21,714
+	public void initScene(initScene27,873
+		Bitmap b =b44,1269
+		Shared.textureManager(Shared.textureManager46,1348
+		Shared.textureManager(Shared.textureManager47,1425
+	public void updateScene(updateScene56,1678
+
+ExampleLoadObjFileMultiple.java,639
+public class ExampleLoadObjFileMultipleExampleLoadObjFileMultiple10,223
+	private final float MAX_ROTATION =MAX_ROTATION12,293
+	private final float MAX_CAM_X =MAX_CAM_X13,334
+	private Object3dContainer car;car14,372
+	private Object3d tireRR;tireRR15,405
+	private Object3d tireRF;tireRF16,432
+	private Object3d tireLR;tireLR17,459
+	private Object3d tireLF;tireLF18,486
+	private int rotationDirection;rotationDirection19,513
+	private float camDirection;camDirection20,546
+	public void initScene(initScene23,590
+		IParser parser =parser25,622
+		Light light =light60,1563
+	public void updateScene(updateScene69,1751
+
+SplashActivity.java,1085
+public class SplashActivitySplashActivity24,575
+	private final int CONTEXTID_VIEWFILE =CONTEXTID_VIEWFILE26,630
+	private final int CONTEXTID_CANCEL =CONTEXTID_CANCEL27,674
+	class ItemVoItemVo31,873
+	class ItemVoItemVo31,873
+		public String filename;filename33,892
+		public String label;label35,943
+		public ItemVo(ItemVo37,969
+			new ItemVo("MIP Mapping (Mapping57,2228
+    public void onCreate(onCreate73,3492
+    	String[] strings =strings75,3552
+    	for (int i =i76,3604
+	    TextView tv =tv84,3904
+	    Linkify.addLinks(Linkify.addLinks85,3972
+    public void onListItemClick(onListItemClick94,4203
+    public boolean onCreateOptionsMenu(onCreateOptionsMenu102,4402
+        int i =i106,4505
+    public boolean onOptionsItemSelected(onOptionsItemSelected114,4668
+    	Intent i;i116,4733
+    public void onCreateContextMenu(onCreateContextMenu136,5354
+	public boolean onContextItemSelected(onContextItemSelected144,5640
+		AdapterContextMenuInfo info =info146,5699
+            	Intent i =i151,5845
+            	String url =url152,5902
+
+ExampleFog.java,585
+public class ExampleFogExampleFog12,277
+	private Box[] boxes;boxes13,329
+	public void initScene(initScene16,367
+		Light light =light17,395
+		Bitmap b =b23,577
+		Shared.textureManager(Shared.textureManager24,642
+		Shared.textureManager(Shared.textureManager28,779
+		for(int i=i33,888
+			Box box =box35,919
+   		Color4 planeColor =planeColor45,1242
+		Rectangle east =east46,1300
+		Rectangle west =west47,1361
+		Rectangle up =up48,1422
+		Rectangle down =down49,1481
+	public void updateScene(updateScene89,2470
+		for(int i=i91,2503
+			Box box =box93,2534
+
+ExampleTransparentGlSurface.java,491
+public class ExampleTransparentGlSurfaceExampleTransparentGlSurface25,833
+	private final int NUM =NUM27,901
+	private Box[] boxes;boxes29,932
+	protected void glSurfaceViewConfig(glSurfaceViewConfig33,972
+	public void initScene(initScene41,1182
+		Light light =light46,1274
+		for (int i =i50,1360
+			Box box =box51,1394
+	protected void onCreate(onCreate64,1801
+			    public void onClick(onClick70,1968
+	public void updateScene(updateScene78,2059
+		for (int i =i80,2090
+
+ExampleSubsetOfFaces.java,148
+public class ExampleSubsetOfFacesExampleSubsetOfFaces12,259
+	public void initScene(initScene22,436
+	public void updateScene(updateScene40,884
+
+ExampleCamera.java,304
+public class ExampleCameraExampleCamera12,216
+	public void initScene(initScene18,333
+		Object3dContainer cube;cube20,362
+	public void updateScene(updateScene41,783
+			float x =x54,1142
+			float z =z55,1193
+			float len =len66,1475
+	public boolean onTrackballEvent(onTrackballEvent76,1681
+
+ExampleAssigningTexturesDynamically.java,364
+public class ExampleAssigningTexturesDynamicallyExampleAssigningTexturesDynamically19,520
+	public void initScene(initScene31,754
+		Bitmap b;b37,867
+		Shared.textureManager(Shared.textureManager40,940
+		Shared.textureManager(Shared.textureManager44,1075
+		Shared.textureManager(Shared.textureManager48,1207
+	public void updateScene(updateScene69,1681
+
+ExampleRenderType.java,142
+public class ExampleRenderTypeExampleRenderType11,195
+	public void initScene(initScene16,296
+	public void updateScene(updateScene28,553
+
+ExampleLoadMD2File.java,221
+public class ExampleLoadMD2FileExampleLoadMD2File9,199
+	private AnimationObject3d ogre;ogre10,259
+	public void initScene(initScene13,307
+		IParser parser =parser17,379
+	public void updateScene(updateScene31,759
+
+ExampleVerticesVariations.java,273
+public class ExampleVerticesVariationsExampleVerticesVariations26,926
+	public void initScene(initScene33,1102
+		Color4[] colors =colors37,1169
+		Bitmap b =b45,1445
+		Shared.textureManager(Shared.textureManager46,1520
+	public void updateScene(updateScene87,3046
+
+ExampleFromScratch.java,319
+public class ExampleFromScratchExampleFromScratch23,618
+	public void initScene(initScene28,718
+	public void updateScene(updateScene34,778
+	private void addToObject(addToObject47,1074
+		float count =count49,1105
+		float rad =rad50,1135
+		float x1 =x151,1179
+		float z1 =z152,1240
+		float y1 =y153,1301
+
+ExampleRotatingPlanets.java,396
+public class ExampleRotatingPlanetsExampleRotatingPlanets22,595
+	public void initScene(initScene29,755
+		Light light =light31,784
+		Bitmap b =b53,1426
+		Shared.textureManager(Shared.textureManager54,1497
+		Shared.textureManager(Shared.textureManager58,1636
+		Shared.textureManager(Shared.textureManager62,1775
+	public void updateScene(updateScene74,2097
+		float mag =mag83,2299
+
+ExampleLoad3DSFile.java,527
+public class ExampleLoad3DSFileExampleLoad3DSFile9,194
+	private final float CAM_RADIUS_X =CAM_RADIUS_X10,254
+	private final float CAM_RADIUS_Y =CAM_RADIUS_Y11,295
+	private final float CAM_RADIUS_Z =CAM_RADIUS_Z12,336
+	private final float ROTATION_SPEED =ROTATION_SPEED13,377
+	private Object3dContainer monster;monster14,419
+	private float degrees;degrees15,456
+	public void initScene(initScene18,495
+		IParser parser =parser22,565
+	public void updateScene(updateScene35,953
+		float radians =radians36,983
+
+ExampleAnimatedTexture.java,259
+public class ExampleAnimatedTextureExampleAnimatedTexture17,313
+	public void initScene(initScene24,436
+		Light light =light26,465
+		Bitmap b;b49,1234
+		Shared.textureManager(Shared.textureManager52,1307
+	public void updateScene(updateScene60,1470
+
+ScratchActivity.java,245
+public class ScratchActivityScratchActivity15,288
+	protected void onCreateSetContentView(onCreateSetContentView26,472
+        LinearLayout ll =ll31,586
+	public void initScene(initScene36,716
+	public void updateScene(updateScene65,1339
+
+ExampleTextures.java,253
+public class ExampleTexturesExampleTextures15,319
+	public void initScene(initScene19,403
+		Bitmap b =b29,678
+		Shared.textureManager(Shared.textureManager34,850
+		TextureVo texture =texture44,1163
+	public void updateScene(updateScene53,1359
+
+ExampleAccelerometer.java,608
+public class ExampleAccelerometerExampleAccelerometer17,486
+	private final float FILTERING_FACTOR =FILTERING_FACTOR18,579
+	private SkyBox mSkyBox;mSkyBox20,628
+	private SensorManager mSensorManager;mSensorManager21,654
+	private Sensor mAccelerometer;mAccelerometer22,694
+	private Number3d mAccVals;mAccVals23,727
+	private Object3dContainer mMonster;mMonster24,756
+    public void onCreate(onCreate27,809
+	public void initScene(initScene35,1191
+		IParser parser =parser50,1819
+	public void onAccuracyChanged(onAccuracyChanged64,2289
+	public void onSensorChanged(onSensorChanged69,2408
+
+ExampleMostMinimal.java,145
+public class ExampleMostMinimalExampleMostMinimal13,233
+	public void initScene(initScene17,320
+	public void updateScene(updateScene51,1364
+
+ExampleTextureOffset.java,337
+public class ExampleTextureOffsetExampleTextureOffset23,670
+	public void initScene(initScene31,804
+		Light light =light33,833
+		Bitmap b =b41,1059
+		Shared.textureManager(Shared.textureManager42,1128
+		Shared.textureManager(Shared.textureManager46,1276
+		TextureVo t =t49,1352
+	public void updateScene(updateScene62,1681
+
+ExampleInsideLayout.java,322
+public class ExampleInsideLayoutExampleInsideLayout18,502
+	protected void onCreateSetContentView(onCreateSetContentView23,633
+        LinearLayout ll =ll27,730
+        Button b;b30,854
+    public void onClick(onClick37,1064
+	public void initScene(initScene44,1138
+	public void updateScene(updateScene54,1318
+
+ExampleMultipleLights.java,266
+public class ExampleMultipleLightsExampleMultipleLights13,253
+	private final float DEGREE =DEGREE15,315
+	public void initScene(initScene29,562
+	public void updateScene(updateScene83,2016
+		float x =x88,2121
+		float z =z89,2181
+		short mag =mag101,2634
+
+ExampleAnimatingVertices.java,308
+public class ExampleAnimatingVerticesExampleAnimatingVertices20,490
+	public void initScene(initScene30,651
+		Bitmap b =b33,751
+		float w =w34,825
+		float h =h35,841
+		Shared.textureManager(Shared.textureManager42,1099
+	public void updateScene(updateScene56,1514
+		float offset =offset60,1631
+
+ExampleMultiTexture.java,348
+public class ExampleMultiTextureExampleMultiTexture30,884
+	public void initScene(initScene42,1106
+		Light light =light44,1135
+		Bitmap b;b72,2029
+		Shared.textureManager(Shared.textureManager75,2102
+		Shared.textureManager(Shared.textureManager79,2253
+		TextureVo texture =texture84,2399
+	public void updateScene(updateScene94,2706
+
+ExampleLightProperties.java,1313
+public class ExampleLightPropertiesExampleLightProperties26,735
+	protected void onCreateSetContentView(onCreateSetContentView34,880
+        LinearLayout ll =ll39,1002
+    public void onInitScene(onInitScene44,1133
+        int[] ids =ids47,1199
+            SeekBar b;b51,1389
+        int[] ids2 =ids258,1599
+            CheckBox ck =ck62,1693
+        CheckBox c1 =c167,1857
+        CheckBox c2 =c270,1958
+        SeekBar sB3 =sB373,2059
+        SeekBar sAngle =sAngle76,2194
+        SeekBar sExp =sExp79,2319
+    OnSeekBarChangeListener seekChange =seekChange83,2432
+    	public void onProgressChanged(onProgressChanged85,2510
+	    	float n =n87,2595
+	    			Log.v(Log.v120,3477
+	    			Log.v(Log.v129,3700
+	    	Log.v(Log.v133,3756
+	    		Log.v(Log.v137,3867
+	    		Number3d n3 =n3142,3991
+	    		Log.v(Log.v145,4106
+    	public void onStartTrackingTouch(onStartTrackingTouch150,4190
+    	public void onStopTrackingTouch(onStopTrackingTouch154,4261
+    OnCheckedChangeListener checkChange =checkChange160,4343
+		public void onCheckedChanged(onCheckedChanged162,4422
+					Log.v(Log.v171,4658
+					Log.v(Log.v176,4806
+	public void initScene(initScene184,4902
+	public void updateScene(updateScene205,5386
+	public void onUpdateScene(onUpdateScene211,5464

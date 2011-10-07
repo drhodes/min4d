@@ -76,7 +76,7 @@ public class Object3d
     }
     return faces;
   }
-  
+
   /**-----------------------------------------------------------------------------
    * Add an arbitary axis to rotate the object about
    * this doesn't accumulate rotation state.
@@ -409,7 +409,18 @@ public class Object3d
   {
     return _scale;
   }
-	
+
+  /**
+   * X/Y/Z scale of object.
+   */
+  public void scale(Number3d s)
+  {
+    _scale = s;
+  }
+
+  
+
+  
   /**
    * Point size (applicable when renderType is POINT)
    * Default is 3. 
