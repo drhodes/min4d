@@ -1,5 +1,6 @@
 package min3d.vos;
 
+import android.util.FloatMath;
 /**
  * Simple VO holding x,y, and z values. Plus helper math functions.
  * Care should be taken to avoid creating Number3d instances unnecessarily. 
@@ -51,7 +52,7 @@ public class Number3d
 	
   public void normalize()
   {
-    float mod = (float) Math.sqrt( this.x*this.x + this.y*this.y + this.z*this.z );
+    float mod = FloatMath.sqrt( this.x*this.x + this.y*this.y + this.z*this.z );
 
     if( mod != 0 && mod != 1)
     {
@@ -85,7 +86,7 @@ public class Number3d
 	
   public float length()
   {
-    return (float) Math.sqrt( this.x*this.x + this.y*this.y + this.z*this.z );
+    return FloatMath.sqrt( this.x*this.x + this.y*this.y + this.z*this.z );
   }
 	
   public Number3d clone()
@@ -95,8 +96,8 @@ public class Number3d
 	
   public void rotateX(float angle)
   {
-    float cosRY = (float) Math.cos(angle);
-    float sinRY = (float) Math.sin(angle);
+    float cosRY = FloatMath.cos(angle);
+    float sinRY = FloatMath.sin(angle);
 
     _temp.setAll(this.x, this.y, this.z); 
 
@@ -106,8 +107,8 @@ public class Number3d
 	
   public void rotateY(float angle)
   {
-    float cosRY = (float) Math.cos(angle);
-    float sinRY = (float) Math.sin(angle);
+    float cosRY = FloatMath.cos(angle);
+    float sinRY = FloatMath.sin(angle);
 
     _temp.setAll(this.x, this.y, this.z); 
 		
@@ -117,8 +118,8 @@ public class Number3d
 	
   public void rotateZ(float angle)
   {
-    float cosRY = (float) Math.cos(angle);
-    float sinRY = (float) Math.sin(angle);
+    float cosRY = FloatMath.cos(angle);
+    float sinRY = FloatMath.sin(angle);
 
     _temp.setAll(this.x, this.y, this.z); 		
 
